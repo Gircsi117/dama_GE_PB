@@ -28,8 +28,10 @@ namespace _2021_11_04_dama_GE_PB
 
         private void alap_general()
         {
-            //alap beállítása
             int magas = this.Height;
+            int egyseg = magas / 12;
+
+            //alap beállítása
             alapPANEl.Size = new Size(magas - 24, magas - 24);
             alapPANEl.Location = new Point(this.Width / 2 - alapPANEl.Width / 2, 12);
 
@@ -43,9 +45,31 @@ namespace _2021_11_04_dama_GE_PB
 
             //cim
             cimLBL.BackColor = Color.FromArgb(50, 192, 64, 0);
-            cimLBL.Size = new Size(magas, magas / 5);
-            cimLBL.Font = new Font("Arial", Convert.ToInt32(Math.Round(magas * 0.08)));
+            cimLBL.Size = new Size(magas, egyseg*2);
+            cimLBL.Font = new Font("Arial", cimLBL.Height/2);
             cimLBL.ForeColor = Color.FromArgb(192, 64, 0);
+
+            //pPanel_1
+            Panel[] p_panels = new Panel[2] { player_namePANEL_1, player_namePANEL_2 };
+            int[] pos = new int[2] {2*egyseg, 7*egyseg};
+            for (int i = 0; i < p_panels.Length; i++)
+            {
+                p_panels[i].Size = new Size(egyseg*3, egyseg*2);
+                p_panels[i].Location = new Point(pos[i], egyseg*3);
+
+                //panel
+                p_panels[i].Controls[1].Location = new Point(0, 0);
+                p_panels[i].Controls[1].Size = new Size(p_panels[i].Width, egyseg);
+                p_panels[i].Controls[1].Font = new Font("Arial", egyseg / 2);
+
+                //textbox
+                p_panels[i].Controls[0].Location = new Point(0, egyseg);
+                p_panels[i].Controls[0].Size = new Size(p_panels[i].Width, egyseg);
+                p_panels[i].Controls[0].Font = new Font("Arial", egyseg / 2);
+
+            }
+
+            this.Focus();
         }
 
         private void exitBTN_Click(object sender, EventArgs e)

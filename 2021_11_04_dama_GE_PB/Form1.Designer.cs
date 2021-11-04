@@ -31,7 +31,7 @@ namespace _2021_11_04_dama_GE_PB
         {
             this.exitBTN = new System.Windows.Forms.Button();
             this.alapPANEl = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.player_namePANEL_2 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.player_namePANEL_1 = new System.Windows.Forms.Panel();
@@ -39,7 +39,7 @@ namespace _2021_11_04_dama_GE_PB
             this.label1 = new System.Windows.Forms.Label();
             this.cimLBL = new System.Windows.Forms.Label();
             this.alapPANEl.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.player_namePANEL_2.SuspendLayout();
             this.player_namePANEL_1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +51,7 @@ namespace _2021_11_04_dama_GE_PB
             this.exitBTN.Name = "exitBTN";
             this.exitBTN.Size = new System.Drawing.Size(34, 23);
             this.exitBTN.TabIndex = 3;
+            this.exitBTN.TabStop = false;
             this.exitBTN.Text = "Exit";
             this.exitBTN.UseVisualStyleBackColor = true;
             this.exitBTN.Click += new System.EventHandler(this.exitBTN_Click);
@@ -59,7 +60,7 @@ namespace _2021_11_04_dama_GE_PB
             // 
             this.alapPANEl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.alapPANEl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.alapPANEl.Controls.Add(this.panel1);
+            this.alapPANEl.Controls.Add(this.player_namePANEL_2);
             this.alapPANEl.Controls.Add(this.player_namePANEL_1);
             this.alapPANEl.Controls.Add(this.cimLBL);
             this.alapPANEl.Location = new System.Drawing.Point(132, 25);
@@ -67,15 +68,15 @@ namespace _2021_11_04_dama_GE_PB
             this.alapPANEl.Size = new System.Drawing.Size(516, 457);
             this.alapPANEl.TabIndex = 2;
             // 
-            // panel1
+            // player_namePANEL_2
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(287, 143);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(192, 100);
-            this.panel1.TabIndex = 2;
+            this.player_namePANEL_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.player_namePANEL_2.Controls.Add(this.textBox2);
+            this.player_namePANEL_2.Controls.Add(this.label2);
+            this.player_namePANEL_2.Location = new System.Drawing.Point(305, 114);
+            this.player_namePANEL_2.Name = "player_namePANEL_2";
+            this.player_namePANEL_2.Size = new System.Drawing.Size(192, 100);
+            this.player_namePANEL_2.TabIndex = 2;
             // 
             // textBox2
             // 
@@ -85,7 +86,8 @@ namespace _2021_11_04_dama_GE_PB
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(191, 48);
             this.textBox2.TabIndex = 1;
-            this.textBox2.Text = "player2";
+            this.textBox2.TabStop = false;
+            this.textBox2.Text = "Player2";
             // 
             // label2
             // 
@@ -104,7 +106,7 @@ namespace _2021_11_04_dama_GE_PB
             this.player_namePANEL_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.player_namePANEL_1.Controls.Add(this.textBox1);
             this.player_namePANEL_1.Controls.Add(this.label1);
-            this.player_namePANEL_1.Location = new System.Drawing.Point(24, 142);
+            this.player_namePANEL_1.Location = new System.Drawing.Point(33, 115);
             this.player_namePANEL_1.Name = "player_namePANEL_1";
             this.player_namePANEL_1.Size = new System.Drawing.Size(192, 100);
             this.player_namePANEL_1.TabIndex = 1;
@@ -117,6 +119,7 @@ namespace _2021_11_04_dama_GE_PB
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(191, 48);
             this.textBox1.TabIndex = 1;
+            this.textBox1.TabStop = false;
             this.textBox1.Text = "Player1";
             // 
             // label1
@@ -133,9 +136,10 @@ namespace _2021_11_04_dama_GE_PB
             // 
             // cimLBL
             // 
-            this.cimLBL.Location = new System.Drawing.Point(-4, -1);
+            this.cimLBL.Location = new System.Drawing.Point(0, 0);
+            this.cimLBL.Margin = new System.Windows.Forms.Padding(0);
             this.cimLBL.Name = "cimLBL";
-            this.cimLBL.Size = new System.Drawing.Size(519, 88);
+            this.cimLBL.Size = new System.Drawing.Size(514, 88);
             this.cimLBL.TabIndex = 0;
             this.cimLBL.Text = "Dáma strike";
             this.cimLBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -152,8 +156,8 @@ namespace _2021_11_04_dama_GE_PB
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.alapPANEl.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.player_namePANEL_2.ResumeLayout(false);
+            this.player_namePANEL_2.PerformLayout();
             this.player_namePANEL_1.ResumeLayout(false);
             this.player_namePANEL_1.PerformLayout();
             this.ResumeLayout(false);
@@ -165,7 +169,7 @@ namespace _2021_11_04_dama_GE_PB
 
         private System.Windows.Forms.Button exitBTN;
         private System.Windows.Forms.Panel alapPANEl;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel player_namePANEL_2;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel player_namePANEL_1;
