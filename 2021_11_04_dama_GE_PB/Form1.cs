@@ -76,6 +76,7 @@ namespace _2021_11_04_dama_GE_PB
                 menu_buttons[i].Font = new Font("Arial", egyseg);
                 menu_buttons[i].MouseEnter += erint;
                 menu_buttons[i].MouseLeave += elhagy;
+                menu_buttons[i].Cursor = Cursors.Hand;
 
                 menu_buttons[i].Location = new Point(egyseg * 7, egyseg * b_pos);
                 b_pos += 3;
