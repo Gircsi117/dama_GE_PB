@@ -19,6 +19,7 @@ namespace _2021_11_04_dama_GE_PB
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //telje sképernyő
             this.TopMost = true;
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
@@ -26,6 +27,7 @@ namespace _2021_11_04_dama_GE_PB
             alap_general();
         }
 
+        //főmenu kinézeti beállításai
         private void alap_general()
         {
             int magas = this.Height;
@@ -62,11 +64,13 @@ namespace _2021_11_04_dama_GE_PB
                 menu_buttons[i].Size = new Size(egyseg * 10, egyseg*2);
 
                 menu_buttons[i].FlatStyle = FlatStyle.Flat;
-                menu_buttons[i].FlatAppearance.BorderColor = Color.FromArgb(255, 128, 0);
-                menu_buttons[i].FlatAppearance.BorderSize = 1;
+                menu_buttons[i].FlatAppearance.BorderColor = Color.FromArgb(192, 64, 0);
+                menu_buttons[i].FlatAppearance.BorderSize = 3;
                 menu_buttons[i].ForeColor = Color.FromArgb(255, 128, 0);
                 menu_buttons[i].BackColor = Color.FromArgb(192, 64, 0);
                 menu_buttons[i].Font = new Font("Arial", egyseg);
+                menu_buttons[i].MouseEnter += erint;
+                menu_buttons[i].MouseLeave += elhagy;
 
                 menu_buttons[i].Location = new Point(egyseg * 7, egyseg * b_pos);
                 b_pos += 3;
@@ -75,9 +79,39 @@ namespace _2021_11_04_dama_GE_PB
             this.Focus();
         }
 
+        //menu gombok
+        private void startBTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void settingBTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void infoBTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void exitBTN_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        //menu gombok "animációja"
+        private void erint(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            btn.ForeColor = Color.FromArgb(192, 64, 0);
+            btn.BackColor = Color.FromArgb(255, 128, 0);
+        }
+        private void elhagy(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            btn.ForeColor = Color.FromArgb(255, 128, 0);
+            btn.BackColor = Color.FromArgb(192, 64, 0);
         }
     }
 }

@@ -77,6 +77,7 @@ namespace _2021_11_04_dama_GE_PB
             this.infoBTN.TabStop = false;
             this.infoBTN.Text = "Info";
             this.infoBTN.UseVisualStyleBackColor = true;
+            this.infoBTN.Click += new System.EventHandler(this.infoBTN_Click);
             // 
             // settingBTN
             // 
@@ -88,6 +89,7 @@ namespace _2021_11_04_dama_GE_PB
             this.settingBTN.TabStop = false;
             this.settingBTN.Text = "Settings";
             this.settingBTN.UseVisualStyleBackColor = true;
+            this.settingBTN.Click += new System.EventHandler(this.settingBTN_Click);
             // 
             // startBTN
             // 
@@ -99,6 +101,7 @@ namespace _2021_11_04_dama_GE_PB
             this.startBTN.TabStop = false;
             this.startBTN.Text = "Start";
             this.startBTN.UseVisualStyleBackColor = true;
+            this.startBTN.Click += new System.EventHandler(this.startBTN_Click);
             // 
             // p1TBOX
             // 
