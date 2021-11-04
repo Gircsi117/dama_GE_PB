@@ -43,9 +43,9 @@ namespace _2021_11_04_dama_GE_PB
             // exitBTN
             // 
             this.exitBTN.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.exitBTN.Location = new System.Drawing.Point(217, 350);
+            this.exitBTN.Location = new System.Drawing.Point(176, 368);
             this.exitBTN.Name = "exitBTN";
-            this.exitBTN.Size = new System.Drawing.Size(65, 23);
+            this.exitBTN.Size = new System.Drawing.Size(140, 38);
             this.exitBTN.TabIndex = 3;
             this.exitBTN.TabStop = false;
             this.exitBTN.Text = "Exit";
@@ -70,9 +70,9 @@ namespace _2021_11_04_dama_GE_PB
             // infoBTN
             // 
             this.infoBTN.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.infoBTN.Location = new System.Drawing.Point(217, 302);
+            this.infoBTN.Location = new System.Drawing.Point(176, 296);
             this.infoBTN.Name = "infoBTN";
-            this.infoBTN.Size = new System.Drawing.Size(65, 23);
+            this.infoBTN.Size = new System.Drawing.Size(140, 41);
             this.infoBTN.TabIndex = 6;
             this.infoBTN.TabStop = false;
             this.infoBTN.Text = "Info";
@@ -82,9 +82,9 @@ namespace _2021_11_04_dama_GE_PB
             // settingBTN
             // 
             this.settingBTN.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.settingBTN.Location = new System.Drawing.Point(217, 250);
+            this.settingBTN.Location = new System.Drawing.Point(176, 250);
             this.settingBTN.Name = "settingBTN";
-            this.settingBTN.Size = new System.Drawing.Size(65, 23);
+            this.settingBTN.Size = new System.Drawing.Size(140, 40);
             this.settingBTN.TabIndex = 5;
             this.settingBTN.TabStop = false;
             this.settingBTN.Text = "Settings";
@@ -94,9 +94,9 @@ namespace _2021_11_04_dama_GE_PB
             // startBTN
             // 
             this.startBTN.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.startBTN.Location = new System.Drawing.Point(217, 207);
+            this.startBTN.Location = new System.Drawing.Point(176, 207);
             this.startBTN.Name = "startBTN";
-            this.startBTN.Size = new System.Drawing.Size(65, 23);
+            this.startBTN.Size = new System.Drawing.Size(140, 37);
             this.startBTN.TabIndex = 4;
             this.startBTN.TabStop = false;
             this.startBTN.Text = "Start";
