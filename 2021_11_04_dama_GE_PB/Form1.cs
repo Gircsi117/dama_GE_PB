@@ -16,6 +16,10 @@ namespace _2021_11_04_dama_GE_PB
         public static int[] szin1 = new int[3] {192, 64, 0 };
         public static int[] szin2 = new int[3] { 10, 10, 10 };
 
+        //változók
+        private bool drag = false;
+        private Point oldalHely = new Point(0, 0);
+
         public Form1()
         {
             InitializeComponent();
@@ -34,17 +38,23 @@ namespace _2021_11_04_dama_GE_PB
         //főmenu kinézeti beállításai
         private void alap_general()
         {
-            button1.Location = new Point(0, 0);
-
+            //MessageBox.Show($"{this.Height}");
             int magas = ((this.Height < this.Width) ? (this.Height) : (this.Width)) - headerPANEL.Height;
             int egyseg = magas / 24;
 
-
+            //header
             headerPANEL.BackColor = Color.FromArgb(szin1[0], szin1[1], szin1[2]);
+            fullBTN.Dock = DockStyle.Right;
+            fullBTN.FlatStyle = FlatStyle.Flat;
+            fullBTN.FlatAppearance.BorderColor = Color.FromArgb(szin1[0], szin1[1], szin1[2]);
+            fullBTN.FlatAppearance.BorderSize = 1;
+            fullBTN.MouseEnter += erint;
+            fullBTN.MouseLeave += elhagy;
+
 
             //alap beállítása
             alapPANEl.Size = new Size(magas - 24, magas - 24);
-            alapPANEl.Location = new Point(this.Width / 2 - alapPANEl.Width / 2, (this.Height / 2 - alapPANEl.Height / 2) + 12);
+            alapPANEl.Location = new Point(this.Width / 2 - alapPANEl.Width / 2, (this.Height / 2 - alapPANEl.Height / 2) + headerPANEL.Height/2);
             alapPANEl.Anchor = AnchorStyles.None;
 
             //cim
@@ -142,7 +152,7 @@ namespace _2021_11_04_dama_GE_PB
             alap_general();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void fullBTN_Click(object sender, EventArgs e)
         {
             if (this.WindowState == FormWindowState.Maximized)
             {
@@ -151,6 +161,32 @@ namespace _2021_11_04_dama_GE_PB
             else
             {
                 this.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        //Lap mozgathatósága
+        private void headerPANEL_MouseDown(object sender, MouseEventArgs e)
+        {
+            drag = true;
+            oldalHely = new Point(e.X, e.Y);
+        }
+
+        private void headerPANEL_MouseUp(object sender, MouseEventArgs e)
+        {
+            drag = false;
+        }
+
+        private void Form1_MouseMove(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void headerPANEL_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (drag)
+            {
+                Point p = PointToScreen(e.Location);
+                Location = new Point(p.X - this.oldalHely.X, p.Y - this.oldalHely.Y);
             }
         }
     }

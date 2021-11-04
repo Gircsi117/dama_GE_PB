@@ -38,8 +38,9 @@ namespace _2021_11_04_dama_GE_PB
             this.p2TBOX = new System.Windows.Forms.TextBox();
             this.cimLBL = new System.Windows.Forms.Label();
             this.headerPANEL = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.fullBTN = new System.Windows.Forms.Button();
             this.alapPANEl.SuspendLayout();
+            this.headerPANEL.SuspendLayout();
             this.SuspendLayout();
             // 
             // exitBTN
@@ -147,22 +148,26 @@ namespace _2021_11_04_dama_GE_PB
             // headerPANEL
             // 
             this.headerPANEL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.headerPANEL.Controls.Add(this.fullBTN);
             this.headerPANEL.Dock = System.Windows.Forms.DockStyle.Top;
             this.headerPANEL.Location = new System.Drawing.Point(0, 0);
             this.headerPANEL.Margin = new System.Windows.Forms.Padding(0);
             this.headerPANEL.Name = "headerPANEL";
             this.headerPANEL.Size = new System.Drawing.Size(1184, 30);
             this.headerPANEL.TabIndex = 3;
+            this.headerPANEL.MouseDown += new System.Windows.Forms.MouseEventHandler(this.headerPANEL_MouseDown);
+            this.headerPANEL.MouseMove += new System.Windows.Forms.MouseEventHandler(this.headerPANEL_MouseMove);
+            this.headerPANEL.MouseUp += new System.Windows.Forms.MouseEventHandler(this.headerPANEL_MouseUp);
             // 
-            // button1
+            // fullBTN
             // 
-            this.button1.Location = new System.Drawing.Point(12, 587);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.fullBTN.Location = new System.Drawing.Point(1130, 4);
+            this.fullBTN.Name = "fullBTN";
+            this.fullBTN.Size = new System.Drawing.Size(51, 23);
+            this.fullBTN.TabIndex = 0;
+            this.fullBTN.Text = "Full";
+            this.fullBTN.UseVisualStyleBackColor = true;
+            this.fullBTN.Click += new System.EventHandler(this.fullBTN_Click);
             // 
             // Form1
             // 
@@ -170,7 +175,6 @@ namespace _2021_11_04_dama_GE_PB
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.ClientSize = new System.Drawing.Size(1184, 661);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.headerPANEL);
             this.Controls.Add(this.alapPANEl);
             this.Name = "Form1";
@@ -180,6 +184,7 @@ namespace _2021_11_04_dama_GE_PB
             this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
             this.alapPANEl.ResumeLayout(false);
             this.alapPANEl.PerformLayout();
+            this.headerPANEL.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -195,7 +200,7 @@ namespace _2021_11_04_dama_GE_PB
         private System.Windows.Forms.Button settingBTN;
         private System.Windows.Forms.Button infoBTN;
         private System.Windows.Forms.Panel headerPANEL;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button fullBTN;
     }
 }
 
