@@ -37,6 +37,8 @@ namespace _2021_11_04_dama_GE_PB
             this.p1TBOX = new System.Windows.Forms.TextBox();
             this.p2TBOX = new System.Windows.Forms.TextBox();
             this.cimLBL = new System.Windows.Forms.Label();
+            this.headerPANEL = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.alapPANEl.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +56,7 @@ namespace _2021_11_04_dama_GE_PB
             // 
             // alapPANEl
             // 
+            this.alapPANEl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.alapPANEl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.alapPANEl.Controls.Add(this.exitBTN);
             this.alapPANEl.Controls.Add(this.infoBTN);
@@ -62,9 +65,9 @@ namespace _2021_11_04_dama_GE_PB
             this.alapPANEl.Controls.Add(this.p1TBOX);
             this.alapPANEl.Controls.Add(this.p2TBOX);
             this.alapPANEl.Controls.Add(this.cimLBL);
-            this.alapPANEl.Location = new System.Drawing.Point(12, 12);
+            this.alapPANEl.Location = new System.Drawing.Point(12, 41);
             this.alapPANEl.Name = "alapPANEl";
-            this.alapPANEl.Size = new System.Drawing.Size(500, 500);
+            this.alapPANEl.Size = new System.Drawing.Size(500, 517);
             this.alapPANEl.TabIndex = 2;
             // 
             // infoBTN
@@ -108,7 +111,7 @@ namespace _2021_11_04_dama_GE_PB
             this.p1TBOX.BackColor = System.Drawing.Color.Black;
             this.p1TBOX.Font = new System.Drawing.Font("Microsoft Sans Serif", 27F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.p1TBOX.ForeColor = System.Drawing.Color.White;
-            this.p1TBOX.Location = new System.Drawing.Point(31, 122);
+            this.p1TBOX.Location = new System.Drawing.Point(33, 122);
             this.p1TBOX.Margin = new System.Windows.Forms.Padding(0);
             this.p1TBOX.Name = "p1TBOX";
             this.p1TBOX.Size = new System.Drawing.Size(191, 48);
@@ -141,16 +144,40 @@ namespace _2021_11_04_dama_GE_PB
             this.cimLBL.Text = "Dáma strike";
             this.cimLBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // headerPANEL
+            // 
+            this.headerPANEL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.headerPANEL.Dock = System.Windows.Forms.DockStyle.Top;
+            this.headerPANEL.Location = new System.Drawing.Point(0, 0);
+            this.headerPANEL.Margin = new System.Windows.Forms.Padding(0);
+            this.headerPANEL.Name = "headerPANEL";
+            this.headerPANEL.Size = new System.Drawing.Size(1184, 30);
+            this.headerPANEL.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 587);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.ClientSize = new System.Drawing.Size(1296, 680);
+            this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.headerPANEL);
             this.Controls.Add(this.alapPANEl);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
             this.alapPANEl.ResumeLayout(false);
             this.alapPANEl.PerformLayout();
             this.ResumeLayout(false);
@@ -167,6 +194,8 @@ namespace _2021_11_04_dama_GE_PB
         private System.Windows.Forms.Button startBTN;
         private System.Windows.Forms.Button settingBTN;
         private System.Windows.Forms.Button infoBTN;
+        private System.Windows.Forms.Panel headerPANEL;
+        private System.Windows.Forms.Button button1;
     }
 }
 

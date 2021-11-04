@@ -12,7 +12,7 @@ namespace _2021_11_04_dama_GE_PB
 {
     public partial class Form1 : Form
     {
-        //public static int[] szin1 = new int[3] {0, 255, 0 };
+        //Szinek
         public static int[] szin1 = new int[3] {192, 64, 0 };
         public static int[] szin2 = new int[3] { 10, 10, 10 };
 
@@ -26,7 +26,7 @@ namespace _2021_11_04_dama_GE_PB
             //telje sképernyő
             this.TopMost = true;
             this.FormBorderStyle = FormBorderStyle.None;
-            this.WindowState = FormWindowState.Maximized;
+            //this.WindowState = FormWindowState.Maximized;
 
             alap_general();
         }
@@ -34,12 +34,18 @@ namespace _2021_11_04_dama_GE_PB
         //főmenu kinézeti beállításai
         private void alap_general()
         {
-            int magas = this.Height;
+            button1.Location = new Point(0, 0);
+
+            int magas = ((this.Height < this.Width) ? (this.Height) : (this.Width)) - headerPANEL.Height;
             int egyseg = magas / 24;
+
+
+            headerPANEL.BackColor = Color.FromArgb(szin1[0], szin1[1], szin1[2]);
 
             //alap beállítása
             alapPANEl.Size = new Size(magas - 24, magas - 24);
-            alapPANEl.Location = new Point(this.Width / 2 - alapPANEl.Width / 2, 12);
+            alapPANEl.Location = new Point(this.Width / 2 - alapPANEl.Width / 2, (this.Height / 2 - alapPANEl.Height / 2) + 12);
+            alapPANEl.Anchor = AnchorStyles.None;
 
             //cim
             cimLBL.BackColor = Color.FromArgb(50, szin1[0], szin1[1], szin1[2]);
@@ -129,6 +135,23 @@ namespace _2021_11_04_dama_GE_PB
         {
             TextBox tbox = sender as TextBox;
             tbox.Text = "";
+        }
+
+        private void Form1_SizeChanged(object sender, EventArgs e)
+        {
+            alap_general();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
         }
     }
 }
