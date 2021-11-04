@@ -54,7 +54,7 @@ namespace _2021_11_04_dama_GE_PB
             // 
             // alapPANEl
             // 
-            this.alapPANEl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.alapPANEl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.alapPANEl.Controls.Add(this.exitBTN);
             this.alapPANEl.Controls.Add(this.infoBTN);
             this.alapPANEl.Controls.Add(this.settingBTN);
@@ -145,7 +145,7 @@ namespace _2021_11_04_dama_GE_PB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.ClientSize = new System.Drawing.Size(1296, 680);
             this.Controls.Add(this.alapPANEl);
             this.Name = "Form1";

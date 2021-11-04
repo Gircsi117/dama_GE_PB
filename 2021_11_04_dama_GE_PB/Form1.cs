@@ -12,6 +12,10 @@ namespace _2021_11_04_dama_GE_PB
 {
     public partial class Form1 : Form
     {
+        //public static int[] szin1 = new int[3] {0, 255, 0 };
+        public static int[] szin1 = new int[3] {192, 64, 0 };
+        public static int[] szin2 = new int[3] { 10, 10, 10 };
+
         public Form1()
         {
             InitializeComponent();
@@ -38,10 +42,10 @@ namespace _2021_11_04_dama_GE_PB
             alapPANEl.Location = new Point(this.Width / 2 - alapPANEl.Width / 2, 12);
 
             //cim
-            cimLBL.BackColor = Color.FromArgb(50, 192, 64, 0);
+            cimLBL.BackColor = Color.FromArgb(50, szin1[0], szin1[1], szin1[2]);
             cimLBL.Size = new Size(magas, egyseg*4);
             cimLBL.Font = new Font("Arial", cimLBL.Height/2);
-            cimLBL.ForeColor = Color.FromArgb(192, 64, 0);
+            cimLBL.ForeColor = Color.FromArgb(szin1[0], szin1[1], szin1[2]);
 
             //textbox
             TextBox[] p_panels = new TextBox[2] {p1TBOX, p2TBOX};
@@ -53,7 +57,7 @@ namespace _2021_11_04_dama_GE_PB
                 p_panels[i].Font = new Font("Arial", egyseg);
                 p_panels[i].Location = new Point(pos[i], egyseg * 6);
                 p_panels[i].MouseClick += nev_torol;
-
+                p_panels[i].BorderStyle = BorderStyle.FixedSingle;
             }
 
             //menu buttons
@@ -65,10 +69,10 @@ namespace _2021_11_04_dama_GE_PB
                 menu_buttons[i].Size = new Size(egyseg * 10, egyseg*2);
 
                 menu_buttons[i].FlatStyle = FlatStyle.Flat;
-                menu_buttons[i].FlatAppearance.BorderColor = Color.FromArgb(192, 64, 0);
+                menu_buttons[i].FlatAppearance.BorderColor = Color.FromArgb(szin1[0], szin1[1], szin1[2]);
                 menu_buttons[i].FlatAppearance.BorderSize = 3;
-                menu_buttons[i].ForeColor = Color.FromArgb(255, 128, 0);
-                menu_buttons[i].BackColor = Color.FromArgb(192, 64, 0);
+                menu_buttons[i].ForeColor = Color.FromArgb(szin2[0], szin2[1], szin2[2]);
+                menu_buttons[i].BackColor = Color.FromArgb(szin1[0], szin1[1], szin1[2]);
                 menu_buttons[i].Font = new Font("Arial", egyseg);
                 menu_buttons[i].MouseEnter += erint;
                 menu_buttons[i].MouseLeave += elhagy;
@@ -109,15 +113,15 @@ namespace _2021_11_04_dama_GE_PB
         private void erint(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            btn.ForeColor = Color.FromArgb(192, 64, 0);
-            btn.BackColor = Color.FromArgb(255, 128, 0);
+            btn.ForeColor = Color.FromArgb(szin1[0], szin1[1], szin1[2]);
+            btn.BackColor = Color.FromArgb(szin2[0], szin2[1], szin2[2]);
         }
 
         private void elhagy(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            btn.ForeColor = Color.FromArgb(255, 128, 0);
-            btn.BackColor = Color.FromArgb(192, 64, 0);
+            btn.ForeColor = Color.FromArgb(szin2[0], szin2[1], szin2[2]);
+            btn.BackColor = Color.FromArgb(szin1[0], szin1[1], szin1[2]);
         }
 
         private void nev_torol(object sender, MouseEventArgs e)
