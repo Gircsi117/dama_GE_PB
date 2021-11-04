@@ -38,18 +38,25 @@ namespace _2021_11_04_dama_GE_PB
         //főmenu kinézeti beállításai
         private void alap_general()
         {
-            //MessageBox.Show($"{this.Height}");
             int magas = ((this.Height < this.Width) ? (this.Height) : (this.Width)) - headerPANEL.Height;
             int egyseg = magas / 24;
 
             //header
             headerPANEL.BackColor = Color.FromArgb(szin1[0], szin1[1], szin1[2]);
+            headerPANEL.Cursor = Cursors.Hand;
+            headerPANEL.MouseEnter += header_megjelenit;
+            headerPANEL.MouseLeave += header_elrejt;
+
             fullBTN.Dock = DockStyle.Right;
+            fullBTN.Cursor = Cursors.Hand;
             fullBTN.FlatStyle = FlatStyle.Flat;
             fullBTN.FlatAppearance.BorderColor = Color.FromArgb(szin1[0], szin1[1], szin1[2]);
             fullBTN.FlatAppearance.BorderSize = 1;
+
             fullBTN.MouseEnter += erint;
+            fullBTN.MouseEnter += header_megjelenit;
             fullBTN.MouseLeave += elhagy;
+            fullBTN.MouseLeave += header_elrejt;
 
 
             //alap beállítása
@@ -97,7 +104,7 @@ namespace _2021_11_04_dama_GE_PB
                 menu_buttons[i].Location = new Point(egyseg * 7, egyseg * b_pos);
                 b_pos += 3;
             }
-            menu_buttons[menu_buttons.Length-1].Location = new Point(egyseg * 7, menu_buttons[menu_buttons.Length - 1].Location.Y + egyseg);
+            menu_buttons[menu_buttons.Length-1].Location = new Point(egyseg * 7, menu_buttons[menu_buttons.Length - 1].Location.Y + egyseg*2);
 
             this.Focus();
         }
@@ -152,18 +159,6 @@ namespace _2021_11_04_dama_GE_PB
             alap_general();
         }
 
-        private void fullBTN_Click(object sender, EventArgs e)
-        {
-            if (this.WindowState == FormWindowState.Maximized)
-            {
-                this.WindowState = FormWindowState.Normal;
-            }
-            else
-            {
-                this.WindowState = FormWindowState.Maximized;
-            }
-        }
-
         //Lap mozgathatósága
         private void headerPANEL_MouseDown(object sender, MouseEventArgs e)
         {
@@ -187,6 +182,38 @@ namespace _2021_11_04_dama_GE_PB
             {
                 Point p = PointToScreen(e.Location);
                 Location = new Point(p.X - this.oldalHely.X, p.Y - this.oldalHely.Y);
+            }
+        }
+
+        //méretezhetőség
+        private void fullBTN_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                headerPANEL.Height = 30;
+                this.WindowState = FormWindowState.Normal;
+                this.Location = new Point(24, 24);
+            }
+            else
+            {
+                headerPANEL.Height = 1;
+                this.WindowState = FormWindowState.Maximized;
+            }
+        }
+        
+        private void header_megjelenit(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                headerPANEL.Height = 30;
+            }
+        }
+
+        private void header_elrejt(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized && Cursor.Position.Y > headerPANEL.Height-1)
+            {
+                headerPANEL.Height = 1;
             }
         }
     }
