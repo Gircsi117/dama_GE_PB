@@ -43,14 +43,14 @@ namespace _2021_11_04_dama_GE_PB
             // exitBTN
             // 
             this.exitBTN.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.exitBTN.Location = new System.Drawing.Point(247, 331);
+            this.exitBTN.Location = new System.Drawing.Point(217, 350);
             this.exitBTN.Name = "exitBTN";
             this.exitBTN.Size = new System.Drawing.Size(65, 23);
             this.exitBTN.TabIndex = 3;
             this.exitBTN.TabStop = false;
             this.exitBTN.Text = "Exit";
             this.exitBTN.UseVisualStyleBackColor = true;
-            this.exitBTN.Click += new System.EventHandler(this.exitBTN_Click);
+            this.exitBTN.MouseClick += new System.Windows.Forms.MouseEventHandler(this.exitBTN_MouseClick);
             // 
             // alapPANEl
             // 
@@ -64,49 +64,51 @@ namespace _2021_11_04_dama_GE_PB
             this.alapPANEl.Controls.Add(this.cimLBL);
             this.alapPANEl.Location = new System.Drawing.Point(12, 12);
             this.alapPANEl.Name = "alapPANEl";
-            this.alapPANEl.Size = new System.Drawing.Size(516, 457);
+            this.alapPANEl.Size = new System.Drawing.Size(500, 500);
             this.alapPANEl.TabIndex = 2;
             // 
             // infoBTN
             // 
             this.infoBTN.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.infoBTN.Location = new System.Drawing.Point(247, 288);
+            this.infoBTN.Location = new System.Drawing.Point(217, 302);
             this.infoBTN.Name = "infoBTN";
             this.infoBTN.Size = new System.Drawing.Size(65, 23);
             this.infoBTN.TabIndex = 6;
             this.infoBTN.TabStop = false;
             this.infoBTN.Text = "Info";
             this.infoBTN.UseVisualStyleBackColor = true;
-            this.infoBTN.Click += new System.EventHandler(this.infoBTN_Click);
+            this.infoBTN.MouseClick += new System.Windows.Forms.MouseEventHandler(this.infoBTN_MouseClick);
             // 
             // settingBTN
             // 
             this.settingBTN.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.settingBTN.Location = new System.Drawing.Point(247, 259);
+            this.settingBTN.Location = new System.Drawing.Point(217, 250);
             this.settingBTN.Name = "settingBTN";
             this.settingBTN.Size = new System.Drawing.Size(65, 23);
             this.settingBTN.TabIndex = 5;
             this.settingBTN.TabStop = false;
             this.settingBTN.Text = "Settings";
             this.settingBTN.UseVisualStyleBackColor = true;
-            this.settingBTN.Click += new System.EventHandler(this.settingBTN_Click);
+            this.settingBTN.MouseClick += new System.Windows.Forms.MouseEventHandler(this.settingBTN_MouseClick);
             // 
             // startBTN
             // 
             this.startBTN.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.startBTN.Location = new System.Drawing.Point(247, 230);
+            this.startBTN.Location = new System.Drawing.Point(217, 207);
             this.startBTN.Name = "startBTN";
             this.startBTN.Size = new System.Drawing.Size(65, 23);
             this.startBTN.TabIndex = 4;
             this.startBTN.TabStop = false;
             this.startBTN.Text = "Start";
             this.startBTN.UseVisualStyleBackColor = true;
-            this.startBTN.Click += new System.EventHandler(this.startBTN_Click);
+            this.startBTN.MouseClick += new System.Windows.Forms.MouseEventHandler(this.startBTN_MouseClick);
             // 
             // p1TBOX
             // 
+            this.p1TBOX.BackColor = System.Drawing.Color.Black;
             this.p1TBOX.Font = new System.Drawing.Font("Microsoft Sans Serif", 27F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.p1TBOX.Location = new System.Drawing.Point(45, 146);
+            this.p1TBOX.ForeColor = System.Drawing.Color.White;
+            this.p1TBOX.Location = new System.Drawing.Point(31, 122);
             this.p1TBOX.Margin = new System.Windows.Forms.Padding(0);
             this.p1TBOX.Name = "p1TBOX";
             this.p1TBOX.Size = new System.Drawing.Size(191, 48);
@@ -118,7 +120,7 @@ namespace _2021_11_04_dama_GE_PB
             // p2TBOX
             // 
             this.p2TBOX.Font = new System.Drawing.Font("Microsoft Sans Serif", 27F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.p2TBOX.Location = new System.Drawing.Point(285, 146);
+            this.p2TBOX.Location = new System.Drawing.Point(278, 122);
             this.p2TBOX.Margin = new System.Windows.Forms.Padding(0);
             this.p2TBOX.Name = "p2TBOX";
             this.p2TBOX.Size = new System.Drawing.Size(191, 48);
@@ -130,10 +132,11 @@ namespace _2021_11_04_dama_GE_PB
             // cimLBL
             // 
             this.cimLBL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.cimLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cimLBL.Location = new System.Drawing.Point(0, 0);
             this.cimLBL.Margin = new System.Windows.Forms.Padding(0);
             this.cimLBL.Name = "cimLBL";
-            this.cimLBL.Size = new System.Drawing.Size(514, 88);
+            this.cimLBL.Size = new System.Drawing.Size(500, 88);
             this.cimLBL.TabIndex = 0;
             this.cimLBL.Text = "Dáma strike";
             this.cimLBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -143,7 +146,7 @@ namespace _2021_11_04_dama_GE_PB
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(1315, 694);
+            this.ClientSize = new System.Drawing.Size(1296, 680);
             this.Controls.Add(this.alapPANEl);
             this.Name = "Form1";
             this.Text = "Form1";

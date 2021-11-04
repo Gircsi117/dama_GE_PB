@@ -52,6 +52,7 @@ namespace _2021_11_04_dama_GE_PB
                 p_panels[i].Size = new Size(egyseg*6, egyseg*2);
                 p_panels[i].Font = new Font("Arial", egyseg);
                 p_panels[i].Location = new Point(pos[i], egyseg * 6);
+                p_panels[i].MouseClick += nev_torol;
 
             }
 
@@ -75,27 +76,31 @@ namespace _2021_11_04_dama_GE_PB
                 menu_buttons[i].Location = new Point(egyseg * 7, egyseg * b_pos);
                 b_pos += 3;
             }
+            menu_buttons[menu_buttons.Length-1].Location = new Point(egyseg * 7, menu_buttons[menu_buttons.Length - 1].Location.Y + egyseg);
 
             this.Focus();
         }
 
-        //menu gombok
-        private void startBTN_Click(object sender, EventArgs e)
+        //menu gomb kattintás
+        private void startBTN_MouseClick(object sender, MouseEventArgs e)
         {
 
+            this.Focus();
         }
 
-        private void settingBTN_Click(object sender, EventArgs e)
+        private void settingBTN_MouseClick(object sender, MouseEventArgs e)
         {
 
+            this.Focus();
         }
 
-        private void infoBTN_Click(object sender, EventArgs e)
+        private void infoBTN_MouseClick(object sender, MouseEventArgs e)
         {
 
+            this.Focus();
         }
 
-        private void exitBTN_Click(object sender, EventArgs e)
+        private void exitBTN_MouseClick(object sender, MouseEventArgs e)
         {
             Application.Exit();
         }
@@ -107,11 +112,18 @@ namespace _2021_11_04_dama_GE_PB
             btn.ForeColor = Color.FromArgb(192, 64, 0);
             btn.BackColor = Color.FromArgb(255, 128, 0);
         }
+
         private void elhagy(object sender, EventArgs e)
         {
             Button btn = sender as Button;
             btn.ForeColor = Color.FromArgb(255, 128, 0);
             btn.BackColor = Color.FromArgb(192, 64, 0);
+        }
+
+        private void nev_torol(object sender, MouseEventArgs e)
+        {
+            TextBox tbox = sender as TextBox;
+            tbox.Text = "";
         }
     }
 }
