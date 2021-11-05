@@ -32,6 +32,12 @@ namespace _2021_11_04_dama_GE_PB
             this.FormBorderStyle = FormBorderStyle.None;
             //this.WindowState = FormWindowState.Maximized;
 
+            int szeles = Screen.PrimaryScreen.WorkingArea.Width;
+            int magas = Screen.PrimaryScreen.WorkingArea.Height;
+
+            this.Width = (szeles / 10 * 7);
+            this.Height = (magas / 10 * 7);
+
             alap_general();
         }
 
@@ -186,11 +192,13 @@ namespace _2021_11_04_dama_GE_PB
         {
             if (this.WindowState == FormWindowState.Maximized)
             {
+                headerPANEL.Visible = true;
                 this.WindowState = FormWindowState.Normal;
                 this.Location = new Point(24, 24);
             }
             else
             {
+                headerPANEL.Visible = false;
                 this.WindowState = FormWindowState.Maximized;
             }
         }
