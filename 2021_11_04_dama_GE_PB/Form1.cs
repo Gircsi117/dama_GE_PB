@@ -37,6 +37,7 @@ namespace _2021_11_04_dama_GE_PB
 
             this.Width = (szeles / 10 * 7);
             this.Height = (magas / 10 * 7);
+            this.Location = new Point(szeles / 2 - this.Width / 2, magas / 2 - this.Height / 2);
 
             alap_general();
         }
@@ -192,9 +193,12 @@ namespace _2021_11_04_dama_GE_PB
         {
             if (this.WindowState == FormWindowState.Maximized)
             {
+                int szeles = Screen.PrimaryScreen.WorkingArea.Width;
+                int magas = Screen.PrimaryScreen.WorkingArea.Height;
+
                 headerPANEL.Visible = true;
                 this.WindowState = FormWindowState.Normal;
-                this.Location = new Point(24, 24);
+                this.Location = new Point(szeles / 2 - this.Width /2 , magas / 2 - this.Height / 2);
             }
             else
             {
