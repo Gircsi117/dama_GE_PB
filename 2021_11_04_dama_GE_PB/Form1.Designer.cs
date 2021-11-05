@@ -182,6 +182,7 @@ namespace _2021_11_04_dama_GE_PB
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.header_nezet);
             this.alapPANEl.ResumeLayout(false);
             this.alapPANEl.PerformLayout();
             this.headerPANEL.ResumeLayout(false);

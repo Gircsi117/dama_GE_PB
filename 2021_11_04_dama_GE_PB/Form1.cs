@@ -44,8 +44,6 @@ namespace _2021_11_04_dama_GE_PB
             //header
             headerPANEL.BackColor = Color.FromArgb(szin1[0], szin1[1], szin1[2]);
             headerPANEL.Cursor = Cursors.Hand;
-            headerPANEL.MouseEnter += header_megjelenit;
-            headerPANEL.MouseLeave += header_elrejt;
 
             fullBTN.Dock = DockStyle.Right;
             fullBTN.Cursor = Cursors.Hand;
@@ -54,9 +52,7 @@ namespace _2021_11_04_dama_GE_PB
             fullBTN.FlatAppearance.BorderSize = 1;
 
             fullBTN.MouseEnter += erint;
-            fullBTN.MouseEnter += header_megjelenit;
             fullBTN.MouseLeave += elhagy;
-            fullBTN.MouseLeave += header_elrejt;
 
 
             //alap beállítása
@@ -190,30 +186,27 @@ namespace _2021_11_04_dama_GE_PB
         {
             if (this.WindowState == FormWindowState.Maximized)
             {
-                headerPANEL.Height = 30;
                 this.WindowState = FormWindowState.Normal;
                 this.Location = new Point(24, 24);
             }
             else
             {
-                headerPANEL.Height = 1;
                 this.WindowState = FormWindowState.Maximized;
             }
         }
-        
-        private void header_megjelenit(object sender, EventArgs e)
+
+        private void header_nezet(object sender, MouseEventArgs e)
         {
             if (this.WindowState == FormWindowState.Maximized)
             {
-                headerPANEL.Height = 30;
-            }
-        }
-
-        private void header_elrejt(object sender, EventArgs e)
-        {
-            if (this.WindowState == FormWindowState.Maximized && Cursor.Position.Y > headerPANEL.Height-1)
-            {
-                headerPANEL.Height = 1;
+                if (e.Y < 30)
+                {
+                    headerPANEL.Visible = true;
+                }
+                else
+                {
+                    headerPANEL.Visible = false;
+                }
             }
         }
     }
