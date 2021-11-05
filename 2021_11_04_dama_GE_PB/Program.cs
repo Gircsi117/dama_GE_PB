@@ -30,6 +30,8 @@ namespace _2021_11_04_dama_GE_PB
         public static Panel header;
         public static UserControl kivalasztott;
 
+        public static Form main_form;
+
         public static void erint(object sender, EventArgs e)
         {
             Button btn = sender as Button;
@@ -42,6 +44,27 @@ namespace _2021_11_04_dama_GE_PB
             Button btn = sender as Button;
             btn.ForeColor = System.Drawing.Color.FromArgb(global.szin2[0], global.szin2[1], global.szin2[2]);
             btn.BackColor = System.Drawing.Color.FromArgb(global.szin1[0], global.szin1[1], global.szin1[2]);
+        }
+
+        public static void meretez_alap(Panel panel, UserControl befogo)
+        {
+            int magas = ((befogo.Height < befogo.Width) ? (befogo.Height) : (befogo.Width));
+            int egyseg = magas / 24;
+
+            panel.Size = new System.Drawing.Size(magas - 24, magas - 24);
+            panel.Location = new System.Drawing.Point(befogo.Width / 2 - panel.Width / 2, (befogo.Height / 2 - panel.Height / 2));
+            panel.Anchor = AnchorStyles.None;
+        }
+
+        public static void elore_hoz(UserControl elem)
+        {
+            global.kivalasztott = elem;
+            elem.BringToFront();
+            if (main_form.WindowState == FormWindowState.Maximized)
+            {
+                global.header.BringToFront();
+            }
+            
         }
     }
 }

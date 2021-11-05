@@ -27,6 +27,8 @@ namespace _2021_11_04_dama_GE_PB
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            atadas();
+            global.elore_hoz(global.menu);
             //telje sképernyő
             this.TopMost = true;
             this.FormBorderStyle = FormBorderStyle.None;
@@ -47,11 +49,14 @@ namespace _2021_11_04_dama_GE_PB
             fullBTN.MouseLeave += global.elhagy;
             fullBTN.Cursor = Cursors.Hand;
 
-            atadas();
+            fullBTN.MouseMove += header_nezet;
+            headerPANEL.MouseMove += header_nezet;
         }
 
         private void atadas()
         {
+            global.main_form = this;
+
             global.header = headerPANEL;
             global.menu = menu1;
             global.jatekter = jatekter1;
@@ -84,22 +89,24 @@ namespace _2021_11_04_dama_GE_PB
         {
             if (this.WindowState == FormWindowState.Maximized)
             {
-                headerPANEL.Dock = DockStyle.Top;
-                menu1.BringToFront();
+                //headerPANEL.Dock = DockStyle.Top;
+                global.kivalasztott.BringToFront();
                 int szeles = Screen.PrimaryScreen.WorkingArea.Width;
                 int magas = Screen.PrimaryScreen.WorkingArea.Height;
 
-                headerPANEL.Visible = true;
+                global.header.Height = 30;
+                global.header.BackColor = Color.FromArgb(global.szin1[0], global.szin1[1], global.szin1[2]);
                 this.WindowState = FormWindowState.Normal;
                 this.Location = new Point(szeles / 2 - this.Width /2 , magas / 2 - this.Height / 2);
             }
             else
             {
                 this.WindowState = FormWindowState.Maximized;
-                headerPANEL.Dock = DockStyle.None;
+                //headerPANEL.Dock = DockStyle.None;
                 headerPANEL.Location = new Point(0, 0);
                 headerPANEL.Size = new Size(this.Width, 30);
-                headerPANEL.Visible = false;
+                global.header.Height = 1;
+                global.header.BackColor = Color.FromArgb(global.szin2[0], global.szin2[1], global.szin2[2]);
                 headerPANEL.BringToFront();
             }
         }
@@ -109,13 +116,15 @@ namespace _2021_11_04_dama_GE_PB
         {
             if (this.WindowState == FormWindowState.Maximized)
             {
-                if (e.Y < 30)
+                if (e.Y < 28)
                 {
-                    headerPANEL.Visible = true;
+                    global.header.Height = 30;
+                    global.header.BackColor = Color.FromArgb(global.szin1[0], global.szin1[1], global.szin1[2]);
                 }
                 else
                 {
-                    headerPANEL.Visible = false;
+                    global.header.Height = 1;
+                    global.header.BackColor = Color.FromArgb(global.szin2[0], global.szin2[1], global.szin2[2]);
                 }
             }
         }

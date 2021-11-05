@@ -69,7 +69,6 @@ namespace _2021_11_04_dama_GE_PB
             this.menu1.Name = "menu1";
             this.menu1.Size = new System.Drawing.Size(1193, 600);
             this.menu1.TabIndex = 4;
-            this.menu1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.header_nezet);
             // 
             // jatekter1
             // 

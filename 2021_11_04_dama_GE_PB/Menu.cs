@@ -40,11 +40,7 @@ namespace _2021_11_04_dama_GE_PB
             int magas = ((this.Height < this.Width) ? (this.Height) : (this.Width));
             int egyseg = magas / 24;
 
-
-            //alap beállítása
-            alapPANEl.Size = new Size(magas - 24, magas - 24);
-            alapPANEl.Location = new Point(this.Width / 2 - alapPANEl.Width / 2, (this.Height / 2 - alapPANEl.Height / 2));
-            alapPANEl.Anchor = AnchorStyles.None;
+            global.meretez_alap(alapPANEl, this);
 
             //cim
             cimLBL.BackColor = Color.FromArgb(50, global.szin1[0], global.szin1[1], global.szin1[2]);
@@ -114,10 +110,7 @@ namespace _2021_11_04_dama_GE_PB
 
         private void startBTN_MouseClick(object sender, MouseEventArgs e)
         {
-            global.header.BringToFront();
-            global.jatekter.BringToFront();
-            global.jatekter.Visible = true;
-            global.jatekter.Dock = DockStyle.Fill;
+            global.elore_hoz(global.jatekter);
         }
     }
 }

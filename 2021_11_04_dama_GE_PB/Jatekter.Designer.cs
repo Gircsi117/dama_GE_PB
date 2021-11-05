@@ -39,6 +39,7 @@ namespace _2021_11_04_dama_GE_PB
             this.gamePANEL.Name = "gamePANEL";
             this.gamePANEL.Size = new System.Drawing.Size(448, 410);
             this.gamePANEL.TabIndex = 0;
+            this.gamePANEL.Click += new System.EventHandler(this.gamePANEL_Click);
             // 
             // Jatekter
             // 
@@ -49,6 +50,7 @@ namespace _2021_11_04_dama_GE_PB
             this.Name = "Jatekter";
             this.Size = new System.Drawing.Size(568, 500);
             this.Load += new System.EventHandler(this.Jatekter_Load);
+            this.SizeChanged += new System.EventHandler(this.Jatekter_SizeChanged);
             this.ResumeLayout(false);
 
         }
