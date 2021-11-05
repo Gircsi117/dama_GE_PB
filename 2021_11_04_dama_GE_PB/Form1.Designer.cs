@@ -29,121 +29,22 @@ namespace _2021_11_04_dama_GE_PB
         /// </summary>
         private void InitializeComponent()
         {
-            this.exitBTN = new System.Windows.Forms.Button();
-            this.alapPANEl = new System.Windows.Forms.Panel();
-            this.infoBTN = new System.Windows.Forms.Button();
-            this.settingBTN = new System.Windows.Forms.Button();
-            this.startBTN = new System.Windows.Forms.Button();
-            this.p1TBOX = new System.Windows.Forms.TextBox();
-            this.p2TBOX = new System.Windows.Forms.TextBox();
-            this.cimLBL = new System.Windows.Forms.Label();
-            this.headerPANEL = new System.Windows.Forms.Panel();
             this.fullBTN = new System.Windows.Forms.Button();
-            this.alapPANEl.SuspendLayout();
+            this.headerPANEL = new System.Windows.Forms.Panel();
+            this.menu1 = new _2021_11_04_dama_GE_PB.Menu();
             this.headerPANEL.SuspendLayout();
             this.SuspendLayout();
             // 
-            // exitBTN
+            // fullBTN
             // 
-            this.exitBTN.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.exitBTN.Location = new System.Drawing.Point(176, 368);
-            this.exitBTN.Name = "exitBTN";
-            this.exitBTN.Size = new System.Drawing.Size(140, 38);
-            this.exitBTN.TabIndex = 3;
-            this.exitBTN.TabStop = false;
-            this.exitBTN.Text = "Exit";
-            this.exitBTN.UseVisualStyleBackColor = true;
-            this.exitBTN.MouseClick += new System.Windows.Forms.MouseEventHandler(this.exitBTN_MouseClick);
-            // 
-            // alapPANEl
-            // 
-            this.alapPANEl.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.alapPANEl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.alapPANEl.Controls.Add(this.exitBTN);
-            this.alapPANEl.Controls.Add(this.infoBTN);
-            this.alapPANEl.Controls.Add(this.settingBTN);
-            this.alapPANEl.Controls.Add(this.startBTN);
-            this.alapPANEl.Controls.Add(this.p1TBOX);
-            this.alapPANEl.Controls.Add(this.p2TBOX);
-            this.alapPANEl.Controls.Add(this.cimLBL);
-            this.alapPANEl.Location = new System.Drawing.Point(12, 41);
-            this.alapPANEl.Name = "alapPANEl";
-            this.alapPANEl.Size = new System.Drawing.Size(500, 517);
-            this.alapPANEl.TabIndex = 2;
-            // 
-            // infoBTN
-            // 
-            this.infoBTN.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.infoBTN.Location = new System.Drawing.Point(176, 296);
-            this.infoBTN.Name = "infoBTN";
-            this.infoBTN.Size = new System.Drawing.Size(140, 41);
-            this.infoBTN.TabIndex = 6;
-            this.infoBTN.TabStop = false;
-            this.infoBTN.Text = "Info";
-            this.infoBTN.UseVisualStyleBackColor = true;
-            this.infoBTN.MouseClick += new System.Windows.Forms.MouseEventHandler(this.infoBTN_MouseClick);
-            // 
-            // settingBTN
-            // 
-            this.settingBTN.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.settingBTN.Location = new System.Drawing.Point(176, 250);
-            this.settingBTN.Name = "settingBTN";
-            this.settingBTN.Size = new System.Drawing.Size(140, 40);
-            this.settingBTN.TabIndex = 5;
-            this.settingBTN.TabStop = false;
-            this.settingBTN.Text = "Settings";
-            this.settingBTN.UseVisualStyleBackColor = true;
-            this.settingBTN.MouseClick += new System.Windows.Forms.MouseEventHandler(this.settingBTN_MouseClick);
-            // 
-            // startBTN
-            // 
-            this.startBTN.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.startBTN.Location = new System.Drawing.Point(176, 207);
-            this.startBTN.Name = "startBTN";
-            this.startBTN.Size = new System.Drawing.Size(140, 37);
-            this.startBTN.TabIndex = 4;
-            this.startBTN.TabStop = false;
-            this.startBTN.Text = "Start";
-            this.startBTN.UseVisualStyleBackColor = true;
-            this.startBTN.MouseClick += new System.Windows.Forms.MouseEventHandler(this.startBTN_MouseClick);
-            // 
-            // p1TBOX
-            // 
-            this.p1TBOX.BackColor = System.Drawing.Color.Black;
-            this.p1TBOX.Font = new System.Drawing.Font("Microsoft Sans Serif", 27F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.p1TBOX.ForeColor = System.Drawing.Color.White;
-            this.p1TBOX.Location = new System.Drawing.Point(33, 122);
-            this.p1TBOX.Margin = new System.Windows.Forms.Padding(0);
-            this.p1TBOX.Name = "p1TBOX";
-            this.p1TBOX.Size = new System.Drawing.Size(191, 48);
-            this.p1TBOX.TabIndex = 1;
-            this.p1TBOX.TabStop = false;
-            this.p1TBOX.Text = "Player1";
-            this.p1TBOX.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // p2TBOX
-            // 
-            this.p2TBOX.Font = new System.Drawing.Font("Microsoft Sans Serif", 27F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.p2TBOX.Location = new System.Drawing.Point(278, 122);
-            this.p2TBOX.Margin = new System.Windows.Forms.Padding(0);
-            this.p2TBOX.Name = "p2TBOX";
-            this.p2TBOX.Size = new System.Drawing.Size(191, 48);
-            this.p2TBOX.TabIndex = 1;
-            this.p2TBOX.TabStop = false;
-            this.p2TBOX.Text = "Player2";
-            this.p2TBOX.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // cimLBL
-            // 
-            this.cimLBL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.cimLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cimLBL.Location = new System.Drawing.Point(0, 0);
-            this.cimLBL.Margin = new System.Windows.Forms.Padding(0);
-            this.cimLBL.Name = "cimLBL";
-            this.cimLBL.Size = new System.Drawing.Size(500, 88);
-            this.cimLBL.TabIndex = 0;
-            this.cimLBL.Text = "Dáma strike";
-            this.cimLBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.fullBTN.Dock = System.Windows.Forms.DockStyle.Right;
+            this.fullBTN.Location = new System.Drawing.Point(1142, 0);
+            this.fullBTN.Name = "fullBTN";
+            this.fullBTN.Size = new System.Drawing.Size(51, 30);
+            this.fullBTN.TabIndex = 0;
+            this.fullBTN.Text = "Full";
+            this.fullBTN.UseVisualStyleBackColor = true;
+            this.fullBTN.Click += new System.EventHandler(this.fullBTN_Click);
             // 
             // headerPANEL
             // 
@@ -153,55 +54,43 @@ namespace _2021_11_04_dama_GE_PB
             this.headerPANEL.Location = new System.Drawing.Point(0, 0);
             this.headerPANEL.Margin = new System.Windows.Forms.Padding(0);
             this.headerPANEL.Name = "headerPANEL";
-            this.headerPANEL.Size = new System.Drawing.Size(1184, 30);
+            this.headerPANEL.Size = new System.Drawing.Size(1193, 30);
             this.headerPANEL.TabIndex = 3;
             this.headerPANEL.MouseDown += new System.Windows.Forms.MouseEventHandler(this.headerPANEL_MouseDown);
             this.headerPANEL.MouseMove += new System.Windows.Forms.MouseEventHandler(this.headerPANEL_MouseMove);
             this.headerPANEL.MouseUp += new System.Windows.Forms.MouseEventHandler(this.headerPANEL_MouseUp);
             // 
-            // fullBTN
+            // menu1
             // 
-            this.fullBTN.Location = new System.Drawing.Point(1130, 4);
-            this.fullBTN.Name = "fullBTN";
-            this.fullBTN.Size = new System.Drawing.Size(51, 23);
-            this.fullBTN.TabIndex = 0;
-            this.fullBTN.Text = "Full";
-            this.fullBTN.UseVisualStyleBackColor = true;
-            this.fullBTN.Click += new System.EventHandler(this.fullBTN_Click);
+            this.menu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.menu1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.menu1.Location = new System.Drawing.Point(0, 30);
+            this.menu1.Name = "menu1";
+            this.menu1.Size = new System.Drawing.Size(1193, 600);
+            this.menu1.TabIndex = 4;
+            this.menu1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.header_nezet);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.ClientSize = new System.Drawing.Size(1193, 630);
+            this.Controls.Add(this.menu1);
             this.Controls.Add(this.headerPANEL);
-            this.Controls.Add(this.alapPANEl);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.header_nezet);
-            this.alapPANEl.ResumeLayout(false);
-            this.alapPANEl.PerformLayout();
             this.headerPANEL.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button exitBTN;
-        private System.Windows.Forms.Panel alapPANEl;
-        private System.Windows.Forms.TextBox p2TBOX;
-        private System.Windows.Forms.TextBox p1TBOX;
-        private System.Windows.Forms.Label cimLBL;
-        private System.Windows.Forms.Button startBTN;
-        private System.Windows.Forms.Button settingBTN;
-        private System.Windows.Forms.Button infoBTN;
-        private System.Windows.Forms.Panel headerPANEL;
+        private Menu menu1;
         private System.Windows.Forms.Button fullBTN;
+        private System.Windows.Forms.Panel headerPANEL;
     }
 }
 
