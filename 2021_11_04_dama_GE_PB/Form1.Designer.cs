@@ -32,6 +32,7 @@ namespace _2021_11_04_dama_GE_PB
             this.fullBTN = new System.Windows.Forms.Button();
             this.headerPANEL = new System.Windows.Forms.Panel();
             this.menu1 = new _2021_11_04_dama_GE_PB.Menu();
+            this.jatekter1 = new _2021_11_04_dama_GE_PB.Jatekter();
             this.headerPANEL.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,12 +71,21 @@ namespace _2021_11_04_dama_GE_PB
             this.menu1.TabIndex = 4;
             this.menu1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.header_nezet);
             // 
+            // jatekter1
+            // 
+            this.jatekter1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.jatekter1.Location = new System.Drawing.Point(12, 306);
+            this.jatekter1.Name = "jatekter1";
+            this.jatekter1.Size = new System.Drawing.Size(348, 300);
+            this.jatekter1.TabIndex = 5;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.ClientSize = new System.Drawing.Size(1193, 630);
+            this.Controls.Add(this.jatekter1);
             this.Controls.Add(this.menu1);
             this.Controls.Add(this.headerPANEL);
             this.Name = "Form1";
@@ -91,6 +101,7 @@ namespace _2021_11_04_dama_GE_PB
         private Menu menu1;
         private System.Windows.Forms.Button fullBTN;
         private System.Windows.Forms.Panel headerPANEL;
+        private Jatekter jatekter1;
     }
 }
 

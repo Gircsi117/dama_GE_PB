@@ -89,7 +89,6 @@ namespace _2021_11_04_dama_GE_PB
             this.settingBTN.TabStop = false;
             this.settingBTN.Text = "Settings";
             this.settingBTN.UseVisualStyleBackColor = true;
-            this.settingBTN.Click += new System.EventHandler(this.settingBTN_Click);
             // 
             // startBTN
             // 
@@ -101,6 +100,7 @@ namespace _2021_11_04_dama_GE_PB
             this.startBTN.TabStop = false;
             this.startBTN.Text = "Start";
             this.startBTN.UseVisualStyleBackColor = true;
+            this.startBTN.MouseClick += new System.Windows.Forms.MouseEventHandler(this.startBTN_MouseClick);
             // 
             // p1TBOX
             // 

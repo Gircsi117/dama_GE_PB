@@ -46,6 +46,16 @@ namespace _2021_11_04_dama_GE_PB
             fullBTN.MouseEnter += global.erint;
             fullBTN.MouseLeave += global.elhagy;
             fullBTN.Cursor = Cursors.Hand;
+
+            atadas();
+        }
+
+        private void atadas()
+        {
+            global.header = headerPANEL;
+            global.menu = menu1;
+            global.jatekter = jatekter1;
+            global.kivalasztott = global.menu;
         }
 
         //Lap mozgathatósága

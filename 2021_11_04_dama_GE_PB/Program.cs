@@ -24,8 +24,11 @@ namespace _2021_11_04_dama_GE_PB
     {
         public static int[] szin1 = new int[3] { 192, 64, 0 };
         public static int[] szin2 = new int[3] { 10, 10, 10 };
-
+        
         public static UserControl menu;
+        public static UserControl jatekter;
+        public static Panel header;
+        public static UserControl kivalasztott;
 
         public static void erint(object sender, EventArgs e)
         {

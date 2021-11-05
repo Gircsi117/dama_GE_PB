@@ -111,5 +111,13 @@ namespace _2021_11_04_dama_GE_PB
         {
             
         }
+
+        private void startBTN_MouseClick(object sender, MouseEventArgs e)
+        {
+            global.header.BringToFront();
+            global.jatekter.BringToFront();
+            global.jatekter.Visible = true;
+            global.jatekter.Dock = DockStyle.Fill;
+        }
     }
 }
