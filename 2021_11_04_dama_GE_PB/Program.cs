@@ -48,11 +48,12 @@ namespace _2021_11_04_dama_GE_PB
 
         public static void meretez_alap(Panel panel, UserControl befogo, int kivon = 0)
         {
-            int magas = ((befogo.Height < befogo.Width) ? (befogo.Height) : (befogo.Width)) - kivon * 2;
+            kivon = (global.main_form.WindowState == FormWindowState.Maximized) ? (header.Height) : (0);
+            int magas = ((befogo.Height < befogo.Width) ? (befogo.Height) : (befogo.Width)) - kivon;
             int egyseg = magas / 24;
 
             panel.Size = new System.Drawing.Size(magas - 24, magas - 24);
-            panel.Location = new System.Drawing.Point(befogo.Width / 2 - panel.Width / 2, (befogo.Height / 2 - panel.Height / 2));
+            panel.Location = new System.Drawing.Point(befogo.Width / 2 - panel.Width / 2, (befogo.Height / 2 - panel.Height / 2) - kivon / 2);
             panel.Anchor = AnchorStyles.None;
         }
 
@@ -60,10 +61,10 @@ namespace _2021_11_04_dama_GE_PB
         {
             global.kivalasztott = elem;
             elem.BringToFront();
-            if (main_form.WindowState == FormWindowState.Maximized)
+            /*if (main_form.WindowState == FormWindowState.Maximized)
             {
                 global.header.BringToFront();
-            }
+            }*/
             
         }
     }

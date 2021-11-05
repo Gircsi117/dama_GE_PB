@@ -22,7 +22,6 @@ namespace _2021_11_04_dama_GE_PB
             //telje sképernyő
             this.BorderStyle = BorderStyle.None;
             this.Dock = DockStyle.Fill;
-            //this.WindowState = FormWindowState.Maximized;
 
             int szeles = Screen.PrimaryScreen.WorkingArea.Width;
             int magas = Screen.PrimaryScreen.WorkingArea.Height;
@@ -37,7 +36,8 @@ namespace _2021_11_04_dama_GE_PB
         //főmenu kinézeti beállításai
         private void alap_general()
         {
-            int magas = ((this.Height < this.Width) ? (this.Height) : (this.Width));
+            int kivon = (global.main_form.WindowState == FormWindowState.Maximized) ? (global.header.Height) : (0);
+            int magas = ((this.Height < this.Width) ? (this.Height) : (this.Width)) - kivon;
             int egyseg = magas / 24;
 
             global.meretez_alap(alapPANEl, this);

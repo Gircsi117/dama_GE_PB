@@ -48,9 +48,6 @@ namespace _2021_11_04_dama_GE_PB
             fullBTN.MouseEnter += global.erint;
             fullBTN.MouseLeave += global.elhagy;
             fullBTN.Cursor = Cursors.Hand;
-
-            fullBTN.MouseMove += header_nezet;
-            headerPANEL.MouseMove += header_nezet;
         }
 
         private void atadas()
@@ -58,9 +55,15 @@ namespace _2021_11_04_dama_GE_PB
             global.main_form = this;
 
             global.header = headerPANEL;
-            global.menu = menu1;
-            global.jatekter = jatekter1;
+            global.menu = new Menu();
+            global.jatekter = new Jatekter();
             global.kivalasztott = global.menu;
+
+            this.Controls.Add(global.menu);
+            this.Controls.Add(global.jatekter);
+
+            global.elore_hoz(global.jatekter);
+            global.elore_hoz(global.menu);
         }
 
         //Lap mozgathatósága
@@ -89,12 +92,11 @@ namespace _2021_11_04_dama_GE_PB
         {
             if (this.WindowState == FormWindowState.Maximized)
             {
-                //headerPANEL.Dock = DockStyle.Top;
                 global.kivalasztott.BringToFront();
                 int szeles = Screen.PrimaryScreen.WorkingArea.Width;
                 int magas = Screen.PrimaryScreen.WorkingArea.Height;
 
-                global.header.Height = 30;
+
                 global.header.BackColor = Color.FromArgb(global.szin1[0], global.szin1[1], global.szin1[2]);
                 this.WindowState = FormWindowState.Normal;
                 this.Location = new Point(szeles / 2 - this.Width /2 , magas / 2 - this.Height / 2);
@@ -102,30 +104,9 @@ namespace _2021_11_04_dama_GE_PB
             else
             {
                 this.WindowState = FormWindowState.Maximized;
-                //headerPANEL.Dock = DockStyle.None;
                 headerPANEL.Location = new Point(0, 0);
                 headerPANEL.Size = new Size(this.Width, 30);
-                global.header.Height = 1;
                 global.header.BackColor = Color.FromArgb(global.szin2[0], global.szin2[1], global.szin2[2]);
-                headerPANEL.BringToFront();
-            }
-        }
-
-        //header láthatóság állítása
-        private void header_nezet(object sender, MouseEventArgs e)
-        {
-            if (this.WindowState == FormWindowState.Maximized)
-            {
-                if (e.Y < 28)
-                {
-                    global.header.Height = 30;
-                    global.header.BackColor = Color.FromArgb(global.szin1[0], global.szin1[1], global.szin1[2]);
-                }
-                else
-                {
-                    global.header.Height = 1;
-                    global.header.BackColor = Color.FromArgb(global.szin2[0], global.szin2[1], global.szin2[2]);
-                }
             }
         }
     }

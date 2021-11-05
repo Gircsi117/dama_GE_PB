@@ -65,6 +65,8 @@ namespace _2021_11_04_dama_GE_PB
 
         private void tabla_meretez()
         {
+            //int kivon = (global.main_form.WindowState == FormWindowState.Maximized) ? (global.header.Height) : (0);
+            global.meretez_alap(gamePANEL, this);
             int szeles = (gamePANEL.Width - 24) / 8;
             int sor = 12;
             int oszlop = 12;
