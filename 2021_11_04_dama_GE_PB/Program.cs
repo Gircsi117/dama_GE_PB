@@ -46,9 +46,9 @@ namespace _2021_11_04_dama_GE_PB
             btn.BackColor = System.Drawing.Color.FromArgb(global.szin1[0], global.szin1[1], global.szin1[2]);
         }
 
-        public static void meretez_alap(Panel panel, UserControl befogo)
+        public static void meretez_alap(Panel panel, UserControl befogo, int kivon = 0)
         {
-            int magas = ((befogo.Height < befogo.Width) ? (befogo.Height) : (befogo.Width));
+            int magas = ((befogo.Height < befogo.Width) ? (befogo.Height) : (befogo.Width)) - kivon * 2;
             int egyseg = magas / 24;
 
             panel.Size = new System.Drawing.Size(magas - 24, magas - 24);

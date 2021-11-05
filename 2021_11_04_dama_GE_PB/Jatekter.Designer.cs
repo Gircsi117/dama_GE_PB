@@ -35,7 +35,7 @@ namespace _2021_11_04_dama_GE_PB
             // gamePANEL
             // 
             this.gamePANEL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.gamePANEL.Location = new System.Drawing.Point(3, 3);
+            this.gamePANEL.Location = new System.Drawing.Point(49, 40);
             this.gamePANEL.Name = "gamePANEL";
             this.gamePANEL.Size = new System.Drawing.Size(448, 410);
             this.gamePANEL.TabIndex = 0;

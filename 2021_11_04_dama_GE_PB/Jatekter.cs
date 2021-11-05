@@ -38,6 +38,7 @@ namespace _2021_11_04_dama_GE_PB
 
         private void tabla_general()
         {
+            tabla_torol();
             int szeles = (gamePANEL.Width - 24) / 8;
             int sor = 12;
             int oszlop = 12;
@@ -84,6 +85,11 @@ namespace _2021_11_04_dama_GE_PB
                 sor += szeles;
                 oszlop = 12;
             }
+        }
+
+        private void tabla_torol()
+        {
+            gamePANEL.Controls.Clear();
         }
     }
 }
