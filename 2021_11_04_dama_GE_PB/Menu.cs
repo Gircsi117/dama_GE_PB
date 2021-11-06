@@ -107,6 +107,8 @@ namespace _2021_11_04_dama_GE_PB
         private void startBTN_MouseClick(object sender, MouseEventArgs e)
         {
             global.elore_hoz(global.jatekter);
+            global.nevek[0] = p1TBOX.Text;
+            global.nevek[1] = p2TBOX.Text;
         }
 
         private void multiBTN_MouseClick(object sender, MouseEventArgs e)

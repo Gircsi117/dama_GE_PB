@@ -32,8 +32,7 @@ namespace _2021_11_04_dama_GE_PB
 
         private void Jatekter_SizeChanged(object sender, EventArgs e)
         {
-            global.meretez_alap(gamePANEL, this);
-            tabla_meretez();
+            alap_general();
         }
 
         private void tabla_general()
@@ -65,8 +64,6 @@ namespace _2021_11_04_dama_GE_PB
 
         private void tabla_meretez()
         {
-            //int kivon = (global.main_form.WindowState == FormWindowState.Maximized) ? (global.header.Height) : (0);
-            global.meretez_alap(gamePANEL, this);
             int szeles = (gamePANEL.Width - 24) / 8;
             int sor = 12;
             int oszlop = 12;
@@ -92,6 +89,24 @@ namespace _2021_11_04_dama_GE_PB
         private void tabla_torol()
         {
             gamePANEL.Controls.Clear();
+        }
+
+        private void alap_general()
+        {
+            global.meretez_alap(containerPANEL, this);
+
+            int egyseg = containerPANEL.Width / 24;
+
+            gamePANEL.Size = new Size(egyseg * 20, egyseg * 20);
+            gamePANEL.Location = new Point(egyseg * 2, egyseg * 3);
+
+            player1_PANEL.Size = new Size(egyseg * 6, egyseg * 2);
+            player1_PANEL.Location = new Point(egyseg * 3, 0);
+            
+            player2_PANEL.Size = new Size(egyseg * 6, egyseg * 2);
+            player2_PANEL.Location = new Point(egyseg * 16, 0);
+
+            tabla_meretez();
         }
     }
 }
