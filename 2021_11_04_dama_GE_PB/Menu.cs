@@ -62,7 +62,7 @@ namespace _2021_11_04_dama_GE_PB
             }
 
             //menu buttons
-            Button[] menu_buttons = new Button[4] { startBTN, settingBTN, infoBTN, exitBTN };
+            Button[] menu_buttons = new Button[4] { startBTN, multiBTN, infoBTN, exitBTN };
             int b_pos = 10;
 
             for (int i = 0; i < menu_buttons.Length; i++)
@@ -103,14 +103,14 @@ namespace _2021_11_04_dama_GE_PB
             Application.Exit();
         }
 
-        private void settingBTN_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void startBTN_MouseClick(object sender, MouseEventArgs e)
         {
             global.elore_hoz(global.jatekter);
+        }
+
+        private void multiBTN_MouseClick(object sender, MouseEventArgs e)
+        {
+            global.elore_hoz(global.multiplayer);
         }
     }
 }

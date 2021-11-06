@@ -32,7 +32,7 @@ namespace _2021_11_04_dama_GE_PB
             this.alapPANEl = new System.Windows.Forms.Panel();
             this.exitBTN = new System.Windows.Forms.Button();
             this.infoBTN = new System.Windows.Forms.Button();
-            this.settingBTN = new System.Windows.Forms.Button();
+            this.multiBTN = new System.Windows.Forms.Button();
             this.startBTN = new System.Windows.Forms.Button();
             this.p1TBOX = new System.Windows.Forms.TextBox();
             this.p2TBOX = new System.Windows.Forms.TextBox();
@@ -46,7 +46,7 @@ namespace _2021_11_04_dama_GE_PB
             this.alapPANEl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.alapPANEl.Controls.Add(this.exitBTN);
             this.alapPANEl.Controls.Add(this.infoBTN);
-            this.alapPANEl.Controls.Add(this.settingBTN);
+            this.alapPANEl.Controls.Add(this.multiBTN);
             this.alapPANEl.Controls.Add(this.startBTN);
             this.alapPANEl.Controls.Add(this.p1TBOX);
             this.alapPANEl.Controls.Add(this.p2TBOX);
@@ -79,16 +79,17 @@ namespace _2021_11_04_dama_GE_PB
             this.infoBTN.Text = "Info";
             this.infoBTN.UseVisualStyleBackColor = true;
             // 
-            // settingBTN
+            // multiBTN
             // 
-            this.settingBTN.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.settingBTN.Location = new System.Drawing.Point(176, 250);
-            this.settingBTN.Name = "settingBTN";
-            this.settingBTN.Size = new System.Drawing.Size(140, 40);
-            this.settingBTN.TabIndex = 5;
-            this.settingBTN.TabStop = false;
-            this.settingBTN.Text = "Settings";
-            this.settingBTN.UseVisualStyleBackColor = true;
+            this.multiBTN.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.multiBTN.Location = new System.Drawing.Point(176, 250);
+            this.multiBTN.Name = "multiBTN";
+            this.multiBTN.Size = new System.Drawing.Size(140, 40);
+            this.multiBTN.TabIndex = 5;
+            this.multiBTN.TabStop = false;
+            this.multiBTN.Text = "Multiplayer";
+            this.multiBTN.UseVisualStyleBackColor = true;
+            this.multiBTN.MouseClick += new System.Windows.Forms.MouseEventHandler(this.multiBTN_MouseClick);
             // 
             // startBTN
             // 
@@ -161,7 +162,7 @@ namespace _2021_11_04_dama_GE_PB
         private System.Windows.Forms.Panel alapPANEl;
         private System.Windows.Forms.Button exitBTN;
         private System.Windows.Forms.Button infoBTN;
-        private System.Windows.Forms.Button settingBTN;
+        private System.Windows.Forms.Button multiBTN;
         private System.Windows.Forms.Button startBTN;
         private System.Windows.Forms.TextBox p1TBOX;
         private System.Windows.Forms.TextBox p2TBOX;

@@ -27,6 +27,8 @@ namespace _2021_11_04_dama_GE_PB
         
         public static UserControl menu;
         public static UserControl jatekter;
+        public static UserControl multiplayer;
+
         public static Panel header;
         public static UserControl kivalasztott;
 
@@ -61,11 +63,6 @@ namespace _2021_11_04_dama_GE_PB
         {
             global.kivalasztott = elem;
             elem.BringToFront();
-            /*if (main_form.WindowState == FormWindowState.Maximized)
-            {
-                global.header.BringToFront();
-            }*/
-            
         }
     }
 }

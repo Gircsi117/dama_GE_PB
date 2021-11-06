@@ -28,7 +28,7 @@ namespace _2021_11_04_dama_GE_PB
         private void Form1_Load(object sender, EventArgs e)
         {
             atadas();
-            global.elore_hoz(global.menu);
+
             //telje sképernyő
             this.TopMost = true;
             this.FormBorderStyle = FormBorderStyle.None;
@@ -58,10 +58,13 @@ namespace _2021_11_04_dama_GE_PB
             global.menu = new Menu();
             global.jatekter = new Jatekter();
             global.kivalasztott = global.menu;
+            global.multiplayer = new Multiplayer();
 
             this.Controls.Add(global.menu);
             this.Controls.Add(global.jatekter);
+            this.Controls.Add(global.multiplayer);
 
+            global.elore_hoz(global.multiplayer);
             global.elore_hoz(global.jatekter);
             global.elore_hoz(global.menu);
         }
