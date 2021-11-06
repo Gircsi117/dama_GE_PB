@@ -72,6 +72,7 @@ namespace _2021_11_04_dama_GE_PB
                 menu_buttons[i].FlatStyle = FlatStyle.Flat;
                 menu_buttons[i].FlatAppearance.BorderColor = Color.FromArgb(global.szin1[0], global.szin1[1], global.szin1[2]);
                 menu_buttons[i].FlatAppearance.BorderSize = 3;
+                menu_buttons[i].FlatAppearance.MouseDownBackColor = Color.FromArgb(global.szin2[0], global.szin2[1], global.szin2[2]);
                 menu_buttons[i].ForeColor = Color.FromArgb(global.szin2[0], global.szin2[1], global.szin2[2]);
                 menu_buttons[i].BackColor = Color.FromArgb(global.szin1[0], global.szin1[1], global.szin1[2]);
                 menu_buttons[i].Font = new Font("Arial", egyseg);

@@ -94,7 +94,7 @@ namespace _2021_11_04_dama_GE_PB
             // startBTN
             // 
             this.startBTN.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.startBTN.Location = new System.Drawing.Point(176, 207);
+            this.startBTN.Location = new System.Drawing.Point(174, 207);
             this.startBTN.Name = "startBTN";
             this.startBTN.Size = new System.Drawing.Size(140, 37);
             this.startBTN.TabIndex = 4;
