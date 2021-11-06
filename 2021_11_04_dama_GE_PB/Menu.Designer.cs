@@ -44,6 +44,7 @@ namespace _2021_11_04_dama_GE_PB
             // 
             this.alapPANEl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.alapPANEl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.alapPANEl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.alapPANEl.Controls.Add(this.exitBTN);
             this.alapPANEl.Controls.Add(this.infoBTN);
             this.alapPANEl.Controls.Add(this.multiBTN);
