@@ -79,6 +79,11 @@ namespace _2021_11_04_dama_GE_PB
         private void headerPANEL_MouseUp(object sender, MouseEventArgs e)
         {
             drag = false;
+            if (this.WindowState != FormWindowState.Maximized && this.Location.Y <= 0)
+            {
+                this.WindowState = FormWindowState.Maximized;
+                global.header.BackColor = Color.FromArgb(global.szin2[0], global.szin2[1], global.szin2[2]);
+            }
         }
 
         private void headerPANEL_MouseMove(object sender, MouseEventArgs e)
@@ -107,8 +112,8 @@ namespace _2021_11_04_dama_GE_PB
             else
             {
                 this.WindowState = FormWindowState.Maximized;
-                headerPANEL.Location = new Point(0, 0);
-                headerPANEL.Size = new Size(this.Width, 30);
+                //headerPANEL.Location = new Point(0, 0);
+                //headerPANEL.Size = new Size(this.Width, 30);
                 global.header.BackColor = Color.FromArgb(global.szin2[0], global.szin2[1], global.szin2[2]);
             }
         }
