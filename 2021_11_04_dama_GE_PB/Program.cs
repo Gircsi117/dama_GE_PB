@@ -63,6 +63,7 @@ namespace _2021_11_04_dama_GE_PB
         public static void elore_hoz(UserControl elem)
         {
             global.kivalasztott = elem;
+            
             elem.BringToFront();
         }
     }

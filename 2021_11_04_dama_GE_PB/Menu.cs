@@ -106,9 +106,11 @@ namespace _2021_11_04_dama_GE_PB
 
         private void startBTN_MouseClick(object sender, MouseEventArgs e)
         {
-            global.elore_hoz(global.jatekter);
+            //global.jatekter.Controls[0].Controls[1].BackColor = Color.Red;
+            //global.jatekter.Controls[0].Controls[0].BackColor = Color.Blue;
             global.nevek[0] = p1TBOX.Text;
             global.nevek[1] = p2TBOX.Text;
+            global.elore_hoz(global.jatekter);
         }
 
         private void multiBTN_MouseClick(object sender, MouseEventArgs e)

@@ -100,13 +100,50 @@ namespace _2021_11_04_dama_GE_PB
             gamePANEL.Size = new Size(egyseg * 20, egyseg * 20);
             gamePANEL.Location = new Point(egyseg * 2, egyseg * 3);
 
-            player1_PANEL.Size = new Size(egyseg * 6, egyseg * 2);
+            player1_PANEL.Size = new Size(egyseg * 8, egyseg * 2);
             player1_PANEL.Location = new Point(egyseg * 3, 0);
             
-            player2_PANEL.Size = new Size(egyseg * 6, egyseg * 2);
-            player2_PANEL.Location = new Point(egyseg * 16, 0);
+            player2_PANEL.Size = new Size(egyseg * 8, egyseg * 2);
+            player2_PANEL.Location = new Point(egyseg * 13, 0);
 
+            p1LBL.Size = new Size(player1_PANEL.Width - 8, player1_PANEL.Height - 8);
+            p1LBL.Location = new Point(4, 4);
+            p1LBL.Font = new Font("Arial", p1LBL.Height / 2);
+            p1LBL.BorderStyle = BorderStyle.FixedSingle;
+
+            p2LBL.Size = new Size(player2_PANEL.Width - 8, player2_PANEL.Height - 8);
+            p2LBL.Location = new Point(4, 4);
+            p2LBL.Font = new Font("Arial", p2LBL.Height / 2);
+            p2LBL.BorderStyle = BorderStyle.FixedSingle;
+
+            kijelol(0);
             tabla_meretez();
+        }
+
+        private void kijelol(int index)
+        {
+            Panel[] panelek = new Panel[2] { player1_PANEL, player2_PANEL };
+            Label[] labelek = new Label[2] { p1LBL, p2LBL };
+            for (int i = 0; i < panelek.Length; i++)
+            {
+                if (i == index)
+                {
+                    panelek[i].BackColor = Color.FromArgb(0, 100, 0);
+                    labelek[i].BorderStyle = BorderStyle.FixedSingle;
+                }
+                else
+                {
+                    labelek[i].BorderStyle = BorderStyle.None;
+                    if (i == 0)
+                    {
+                        panelek[i].BackColor = Color.Black;
+                    }
+                    else
+                    {
+                        panelek[i].BackColor = Color.White;
+                    }
+                }
+            }
         }
     }
 }
