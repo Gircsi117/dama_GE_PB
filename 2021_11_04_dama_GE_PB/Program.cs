@@ -60,10 +60,14 @@ namespace _2021_11_04_dama_GE_PB
             panel.Anchor = AnchorStyles.None;
         }
 
-        public static void elore_hoz(UserControl elem)
+        public static void elore_hoz(UserControl elem, bool visible = true)
         {
             global.kivalasztott = elem;
-            
+            if (visible)
+            {
+                elem.Visible = false;
+                elem.Visible = true;
+            }
             elem.BringToFront();
         }
     }

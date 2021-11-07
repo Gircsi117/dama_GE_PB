@@ -145,5 +145,14 @@ namespace _2021_11_04_dama_GE_PB
                 }
             }
         }
+
+        private void Jatekter_VisibleChanged(object sender, EventArgs e)
+        {
+            if (this.Visible == true)
+            {
+                p1LBL.Text = global.nevek[0];
+                p2LBL.Text = global.nevek[1];
+            }
+        }
     }
 }

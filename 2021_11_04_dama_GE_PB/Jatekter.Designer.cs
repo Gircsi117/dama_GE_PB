@@ -31,13 +31,13 @@ namespace _2021_11_04_dama_GE_PB
         {
             this.gamePANEL = new System.Windows.Forms.Panel();
             this.containerPANEL = new System.Windows.Forms.Panel();
-            this.player1_PANEL = new System.Windows.Forms.Panel();
             this.player2_PANEL = new System.Windows.Forms.Panel();
             this.p2LBL = new System.Windows.Forms.Label();
+            this.player1_PANEL = new System.Windows.Forms.Panel();
             this.p1LBL = new System.Windows.Forms.Label();
             this.containerPANEL.SuspendLayout();
-            this.player1_PANEL.SuspendLayout();
             this.player2_PANEL.SuspendLayout();
+            this.player1_PANEL.SuspendLayout();
             this.SuspendLayout();
             // 
             // gamePANEL
@@ -60,15 +60,6 @@ namespace _2021_11_04_dama_GE_PB
             this.containerPANEL.Size = new System.Drawing.Size(556, 502);
             this.containerPANEL.TabIndex = 1;
             // 
-            // player1_PANEL
-            // 
-            this.player1_PANEL.BackColor = System.Drawing.Color.Black;
-            this.player1_PANEL.Controls.Add(this.p1LBL);
-            this.player1_PANEL.Location = new System.Drawing.Point(87, 24);
-            this.player1_PANEL.Name = "player1_PANEL";
-            this.player1_PANEL.Size = new System.Drawing.Size(117, 48);
-            this.player1_PANEL.TabIndex = 1;
-            // 
             // player2_PANEL
             // 
             this.player2_PANEL.BackColor = System.Drawing.Color.White;
@@ -88,6 +79,15 @@ namespace _2021_11_04_dama_GE_PB
             this.p2LBL.TabIndex = 4;
             this.p2LBL.Text = "label2";
             this.p2LBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // player1_PANEL
+            // 
+            this.player1_PANEL.BackColor = System.Drawing.Color.Black;
+            this.player1_PANEL.Controls.Add(this.p1LBL);
+            this.player1_PANEL.Location = new System.Drawing.Point(87, 24);
+            this.player1_PANEL.Name = "player1_PANEL";
+            this.player1_PANEL.Size = new System.Drawing.Size(117, 48);
+            this.player1_PANEL.TabIndex = 1;
             // 
             // p1LBL
             // 
@@ -111,9 +111,10 @@ namespace _2021_11_04_dama_GE_PB
             this.Size = new System.Drawing.Size(780, 508);
             this.Load += new System.EventHandler(this.Jatekter_Load);
             this.SizeChanged += new System.EventHandler(this.Jatekter_SizeChanged);
+            this.VisibleChanged += new System.EventHandler(this.Jatekter_VisibleChanged);
             this.containerPANEL.ResumeLayout(false);
-            this.player1_PANEL.ResumeLayout(false);
             this.player2_PANEL.ResumeLayout(false);
+            this.player1_PANEL.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
