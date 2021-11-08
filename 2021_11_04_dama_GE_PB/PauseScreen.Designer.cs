@@ -57,8 +57,9 @@ namespace _2021_11_04_dama_GE_PB
             this.menuBTN.Size = new System.Drawing.Size(140, 37);
             this.menuBTN.TabIndex = 8;
             this.menuBTN.TabStop = false;
-            this.menuBTN.Text = "Start";
+            this.menuBTN.Text = "Back to menu";
             this.menuBTN.UseVisualStyleBackColor = true;
+            this.menuBTN.Click += new System.EventHandler(this.menuBTN_Click);
             // 
             // screenBTN
             // 
@@ -68,8 +69,9 @@ namespace _2021_11_04_dama_GE_PB
             this.screenBTN.Size = new System.Drawing.Size(140, 37);
             this.screenBTN.TabIndex = 7;
             this.screenBTN.TabStop = false;
-            this.screenBTN.Text = "Start";
+            this.screenBTN.Text = "Full screen";
             this.screenBTN.UseVisualStyleBackColor = true;
+            this.screenBTN.Click += new System.EventHandler(this.screenBTN_Click);
             // 
             // newgameBTN
             // 
@@ -79,8 +81,9 @@ namespace _2021_11_04_dama_GE_PB
             this.newgameBTN.Size = new System.Drawing.Size(140, 37);
             this.newgameBTN.TabIndex = 6;
             this.newgameBTN.TabStop = false;
-            this.newgameBTN.Text = "Start";
+            this.newgameBTN.Text = "New game";
             this.newgameBTN.UseVisualStyleBackColor = true;
+            this.newgameBTN.Click += new System.EventHandler(this.newgameBTN_Click);
             // 
             // contineueBTN
             // 
@@ -90,8 +93,9 @@ namespace _2021_11_04_dama_GE_PB
             this.contineueBTN.Size = new System.Drawing.Size(140, 37);
             this.contineueBTN.TabIndex = 5;
             this.contineueBTN.TabStop = false;
-            this.contineueBTN.Text = "Start";
+            this.contineueBTN.Text = "Continue";
             this.contineueBTN.UseVisualStyleBackColor = true;
+            this.contineueBTN.Click += new System.EventHandler(this.contineueBTN_Click);
             // 
             // PauseScreen
             // 

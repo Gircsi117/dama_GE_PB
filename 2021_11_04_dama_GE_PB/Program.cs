@@ -29,6 +29,7 @@ namespace _2021_11_04_dama_GE_PB
         public static UserControl menu;
         public static UserControl jatekter;
         public static UserControl multiplayer;
+        public static UserControl pause;
 
         public static Panel header;
         public static UserControl kivalasztott;
@@ -62,7 +63,11 @@ namespace _2021_11_04_dama_GE_PB
 
         public static void elore_hoz(UserControl elem, bool visible = true)
         {
-            global.kivalasztott = elem;
+            if (elem != global.pause)
+            {
+                global.kivalasztott = elem;
+            }
+            
             if (visible)
             {
                 elem.Visible = false;

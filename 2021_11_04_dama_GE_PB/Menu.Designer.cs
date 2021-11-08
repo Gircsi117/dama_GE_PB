@@ -87,14 +87,14 @@ namespace _2021_11_04_dama_GE_PB
             this.multiBTN.Size = new System.Drawing.Size(140, 40);
             this.multiBTN.TabIndex = 5;
             this.multiBTN.TabStop = false;
-            this.multiBTN.Text = "Multiplayer";
+            this.multiBTN.Text = "Online";
             this.multiBTN.UseVisualStyleBackColor = true;
             this.multiBTN.MouseClick += new System.Windows.Forms.MouseEventHandler(this.multiBTN_MouseClick);
             // 
             // startBTN
             // 
             this.startBTN.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.startBTN.Location = new System.Drawing.Point(174, 207);
+            this.startBTN.Location = new System.Drawing.Point(176, 207);
             this.startBTN.Name = "startBTN";
             this.startBTN.Size = new System.Drawing.Size(140, 37);
             this.startBTN.TabIndex = 4;

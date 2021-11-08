@@ -57,13 +57,17 @@ namespace _2021_11_04_dama_GE_PB
             global.header = headerPANEL;
             global.menu = new Menu();
             global.jatekter = new Jatekter();
+
             global.kivalasztott = global.menu;
             global.multiplayer = new Multiplayer();
+            global.pause = new PauseScreen();
 
             this.Controls.Add(global.menu);
             this.Controls.Add(global.jatekter);
             this.Controls.Add(global.multiplayer);
+            this.Controls.Add(global.pause);
 
+            global.elore_hoz(global.pause);
             global.elore_hoz(global.multiplayer);
             global.elore_hoz(global.jatekter);
             global.elore_hoz(global.menu);
