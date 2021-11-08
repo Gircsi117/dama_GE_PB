@@ -12,6 +12,9 @@ namespace _2021_11_04_dama_GE_PB
 {
     public partial class Jatekter : UserControl
     {
+        static Panel[,] jatekter = new Panel[8, 8];
+        static Panel[,] babuk = new Panel[8, 8];
+
         public Jatekter()
         {
             InitializeComponent();
@@ -55,6 +58,8 @@ namespace _2021_11_04_dama_GE_PB
                     szin = !szin;
 
                     oszlop += szeles;
+
+                    jatekter[i, j] = pan;
                 }
                 szin = !szin;
                 sor += szeles;
@@ -118,6 +123,17 @@ namespace _2021_11_04_dama_GE_PB
 
             kijelol(0);
             tabla_meretez();
+        }
+
+        private void babuk_general()
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+
+                }
+            }
         }
 
         private void kijelol(int index)
