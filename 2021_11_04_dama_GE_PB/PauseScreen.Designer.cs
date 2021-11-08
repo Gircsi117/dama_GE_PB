@@ -30,15 +30,68 @@ namespace _2021_11_04_dama_GE_PB
         private void InitializeComponent()
         {
             this.centerPANEL = new System.Windows.Forms.Panel();
+            this.menuBTN = new System.Windows.Forms.Button();
+            this.screenBTN = new System.Windows.Forms.Button();
+            this.newgameBTN = new System.Windows.Forms.Button();
+            this.contineueBTN = new System.Windows.Forms.Button();
+            this.centerPANEL.SuspendLayout();
             this.SuspendLayout();
             // 
             // centerPANEL
             // 
             this.centerPANEL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.centerPANEL.Controls.Add(this.menuBTN);
+            this.centerPANEL.Controls.Add(this.screenBTN);
+            this.centerPANEL.Controls.Add(this.newgameBTN);
+            this.centerPANEL.Controls.Add(this.contineueBTN);
             this.centerPANEL.Location = new System.Drawing.Point(127, 56);
             this.centerPANEL.Name = "centerPANEL";
-            this.centerPANEL.Size = new System.Drawing.Size(475, 464);
+            this.centerPANEL.Size = new System.Drawing.Size(422, 422);
             this.centerPANEL.TabIndex = 0;
+            // 
+            // menuBTN
+            // 
+            this.menuBTN.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.menuBTN.Location = new System.Drawing.Point(135, 287);
+            this.menuBTN.Name = "menuBTN";
+            this.menuBTN.Size = new System.Drawing.Size(140, 37);
+            this.menuBTN.TabIndex = 8;
+            this.menuBTN.TabStop = false;
+            this.menuBTN.Text = "Start";
+            this.menuBTN.UseVisualStyleBackColor = true;
+            // 
+            // screenBTN
+            // 
+            this.screenBTN.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.screenBTN.Location = new System.Drawing.Point(135, 212);
+            this.screenBTN.Name = "screenBTN";
+            this.screenBTN.Size = new System.Drawing.Size(140, 37);
+            this.screenBTN.TabIndex = 7;
+            this.screenBTN.TabStop = false;
+            this.screenBTN.Text = "Start";
+            this.screenBTN.UseVisualStyleBackColor = true;
+            // 
+            // newgameBTN
+            // 
+            this.newgameBTN.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.newgameBTN.Location = new System.Drawing.Point(135, 141);
+            this.newgameBTN.Name = "newgameBTN";
+            this.newgameBTN.Size = new System.Drawing.Size(140, 37);
+            this.newgameBTN.TabIndex = 6;
+            this.newgameBTN.TabStop = false;
+            this.newgameBTN.Text = "Start";
+            this.newgameBTN.UseVisualStyleBackColor = true;
+            // 
+            // contineueBTN
+            // 
+            this.contineueBTN.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.contineueBTN.Location = new System.Drawing.Point(135, 68);
+            this.contineueBTN.Name = "contineueBTN";
+            this.contineueBTN.Size = new System.Drawing.Size(140, 37);
+            this.contineueBTN.TabIndex = 5;
+            this.contineueBTN.TabStop = false;
+            this.contineueBTN.Text = "Start";
+            this.contineueBTN.UseVisualStyleBackColor = true;
             // 
             // PauseScreen
             // 
@@ -47,7 +100,10 @@ namespace _2021_11_04_dama_GE_PB
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.Controls.Add(this.centerPANEL);
             this.Name = "PauseScreen";
-            this.Size = new System.Drawing.Size(754, 601);
+            this.Size = new System.Drawing.Size(680, 567);
+            this.Load += new System.EventHandler(this.PauseScreen_Load);
+            this.SizeChanged += new System.EventHandler(this.PauseScreen_SizeChanged);
+            this.centerPANEL.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -55,5 +111,9 @@ namespace _2021_11_04_dama_GE_PB
         #endregion
 
         private System.Windows.Forms.Panel centerPANEL;
+        private System.Windows.Forms.Button menuBTN;
+        private System.Windows.Forms.Button screenBTN;
+        private System.Windows.Forms.Button newgameBTN;
+        private System.Windows.Forms.Button contineueBTN;
     }
 }

@@ -37,7 +37,7 @@ namespace _2021_11_04_dama_GE_PB
             // fullBTN
             // 
             this.fullBTN.Dock = System.Windows.Forms.DockStyle.Right;
-            this.fullBTN.Location = new System.Drawing.Point(1038, 0);
+            this.fullBTN.Location = new System.Drawing.Point(627, 0);
             this.fullBTN.Name = "fullBTN";
             this.fullBTN.Size = new System.Drawing.Size(51, 30);
             this.fullBTN.TabIndex = 0;
@@ -53,7 +53,7 @@ namespace _2021_11_04_dama_GE_PB
             this.headerPANEL.Location = new System.Drawing.Point(0, 0);
             this.headerPANEL.Margin = new System.Windows.Forms.Padding(0);
             this.headerPANEL.Name = "headerPANEL";
-            this.headerPANEL.Size = new System.Drawing.Size(1089, 30);
+            this.headerPANEL.Size = new System.Drawing.Size(678, 30);
             this.headerPANEL.TabIndex = 3;
             this.headerPANEL.MouseDown += new System.Windows.Forms.MouseEventHandler(this.headerPANEL_MouseDown);
             this.headerPANEL.MouseMove += new System.Windows.Forms.MouseEventHandler(this.headerPANEL_MouseMove);
@@ -64,7 +64,7 @@ namespace _2021_11_04_dama_GE_PB
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.ClientSize = new System.Drawing.Size(1089, 599);
+            this.ClientSize = new System.Drawing.Size(678, 518);
             this.Controls.Add(this.headerPANEL);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
