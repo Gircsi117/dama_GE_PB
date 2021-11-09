@@ -123,10 +123,15 @@ namespace _2021_11_04_dama_GE_PB
                     global.header.BackColor = Color.FromArgb(global.szin2[0], global.szin2[1], global.szin2[2]);
                 }
             }
-            else
+            else if((sender as Button).Text == "Menu")
             {
                 global.elore_hoz(global.pause);
                 global.header.Controls[0].Visible = false;
+            }
+            else if((sender as Button).Text == "Back")
+            {
+                global.elore_hoz(global.menu);
+                (sender as Button).Text = "Full";
             }
         }
     }

@@ -115,6 +115,7 @@ namespace _2021_11_04_dama_GE_PB
         private void multiBTN_MouseClick(object sender, MouseEventArgs e)
         {
             global.elore_hoz(global.multiplayer);
+            global.header.Controls[0].Text = "Back";
         }
     }
 }
