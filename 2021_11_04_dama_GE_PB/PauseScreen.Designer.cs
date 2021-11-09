@@ -39,7 +39,6 @@ namespace _2021_11_04_dama_GE_PB
             // 
             // centerPANEL
             // 
-            this.centerPANEL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.centerPANEL.Controls.Add(this.menuBTN);
             this.centerPANEL.Controls.Add(this.screenBTN);
             this.centerPANEL.Controls.Add(this.newgameBTN);

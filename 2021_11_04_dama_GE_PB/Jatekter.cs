@@ -28,11 +28,6 @@ namespace _2021_11_04_dama_GE_PB
             tabla_meretez();
         }
 
-        private void gamePANEL_Click(object sender, EventArgs e)
-        {
-            global.elore_hoz(global.menu);
-        }
-
         private void Jatekter_SizeChanged(object sender, EventArgs e)
         {
             alap_general();

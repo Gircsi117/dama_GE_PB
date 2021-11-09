@@ -53,31 +53,29 @@ namespace _2021_11_04_dama_GE_PB
         private void contineueBTN_Click(object sender, EventArgs e)
         {
             global.elore_hoz(global.jatekter, false);
+            global.header.Controls[0].Visible = true;
         }
 
         private void newgameBTN_Click(object sender, EventArgs e)
         {
             global.elore_hoz(global.jatekter);
+            global.header.Controls[0].Visible = true;
         }
 
         private void screenBTN_Click(object sender, EventArgs e)
         {
             if (global.main_form.WindowState == FormWindowState.Maximized)
             {
-                global.kivalasztott.BringToFront();
                 int szeles = Screen.PrimaryScreen.WorkingArea.Width;
                 int magas = Screen.PrimaryScreen.WorkingArea.Height;
 
-
                 global.header.BackColor = Color.FromArgb(global.szin1[0], global.szin1[1], global.szin1[2]);
                 global.main_form.WindowState = FormWindowState.Normal;
-                this.Location = new Point(szeles / 2 - this.Width / 2, magas / 2 - this.Height / 2);
+                global.main_form.Location = new Point(szeles / 2 - this.Width / 2, magas / 2 - this.Height / 2);
             }
             else
             {
                 global.main_form.WindowState = FormWindowState.Maximized;
-                //headerPANEL.Location = new Point(0, 0);
-                //headerPANEL.Size = new Size(this.Width, 30);
                 global.header.BackColor = Color.FromArgb(global.szin2[0], global.szin2[1], global.szin2[2]);
             }
         }
@@ -85,6 +83,8 @@ namespace _2021_11_04_dama_GE_PB
         private void menuBTN_Click(object sender, EventArgs e)
         {
             global.elore_hoz(global.menu);
+            global.header.Controls[0].Text = "Full";
+            global.header.Controls[0].Visible = true;
         }
     }
 }

@@ -102,23 +102,31 @@ namespace _2021_11_04_dama_GE_PB
         //méretezhetőség
         private void fullBTN_Click(object sender, EventArgs e)
         {
-            if (this.WindowState == FormWindowState.Maximized)
+            if ((sender as Button).Text == "Full")
             {
-                global.kivalasztott.BringToFront();
-                int szeles = Screen.PrimaryScreen.WorkingArea.Width;
-                int magas = Screen.PrimaryScreen.WorkingArea.Height;
+                if (this.WindowState == FormWindowState.Maximized)
+                {
+                    global.kivalasztott.BringToFront();
+                    int szeles = Screen.PrimaryScreen.WorkingArea.Width;
+                    int magas = Screen.PrimaryScreen.WorkingArea.Height;
 
 
-                global.header.BackColor = Color.FromArgb(global.szin1[0], global.szin1[1], global.szin1[2]);
-                this.WindowState = FormWindowState.Normal;
-                this.Location = new Point(szeles / 2 - this.Width /2 , magas / 2 - this.Height / 2);
+                    global.header.BackColor = Color.FromArgb(global.szin1[0], global.szin1[1], global.szin1[2]);
+                    this.WindowState = FormWindowState.Normal;
+                    this.Location = new Point(szeles / 2 - this.Width / 2, magas / 2 - this.Height / 2);
+                }
+                else
+                {
+                    this.WindowState = FormWindowState.Maximized;
+                    //headerPANEL.Location = new Point(0, 0);
+                    //headerPANEL.Size = new Size(this.Width, 30);
+                    global.header.BackColor = Color.FromArgb(global.szin2[0], global.szin2[1], global.szin2[2]);
+                }
             }
             else
             {
-                this.WindowState = FormWindowState.Maximized;
-                //headerPANEL.Location = new Point(0, 0);
-                //headerPANEL.Size = new Size(this.Width, 30);
-                global.header.BackColor = Color.FromArgb(global.szin2[0], global.szin2[1], global.szin2[2]);
+                global.elore_hoz(global.pause);
+                global.header.Controls[0].Visible = false;
             }
         }
     }

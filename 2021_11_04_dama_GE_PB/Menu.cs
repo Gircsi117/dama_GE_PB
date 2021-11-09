@@ -108,6 +108,7 @@ namespace _2021_11_04_dama_GE_PB
         {
             global.nevek[0] = p1TBOX.Text;
             global.nevek[1] = p2TBOX.Text;
+            global.header.Controls[0].Text = "Menu";
             global.elore_hoz(global.jatekter);
         }
 
