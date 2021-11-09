@@ -52,5 +52,10 @@ namespace _2021_11_04_dama_GE_PB
                 pos += 8;
             }
         }
+
+        private void jatekrol_szovegLBL_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://hu.wikipedia.org/wiki/Dámajáték");
+        }
     }
 }

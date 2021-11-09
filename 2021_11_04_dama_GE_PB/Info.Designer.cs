@@ -76,6 +76,7 @@ namespace _2021_11_04_dama_GE_PB
             // 
             // jatekrol_szovegLBL
             // 
+            this.jatekrol_szovegLBL.Cursor = System.Windows.Forms.Cursors.Hand;
             this.jatekrol_szovegLBL.ForeColor = System.Drawing.Color.White;
             this.jatekrol_szovegLBL.Location = new System.Drawing.Point(2, 206);
             this.jatekrol_szovegLBL.Name = "jatekrol_szovegLBL";
@@ -84,6 +85,7 @@ namespace _2021_11_04_dama_GE_PB
             this.jatekrol_szovegLBL.TabIndex = 3;
             this.jatekrol_szovegLBL.Text = "Wikipédia:\r\nhttps://hu.wikipedia.org/wiki/Dámajáték\r\n";
             this.jatekrol_szovegLBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.jatekrol_szovegLBL.Click += new System.EventHandler(this.jatekrol_szovegLBL_Click);
             // 
             // jatekrol_cimLBL
             // 
