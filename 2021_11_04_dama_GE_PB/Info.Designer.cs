@@ -78,7 +78,7 @@ namespace _2021_11_04_dama_GE_PB
             // 
             this.jatekrol_szovegLBL.Cursor = System.Windows.Forms.Cursors.Hand;
             this.jatekrol_szovegLBL.ForeColor = System.Drawing.Color.White;
-            this.jatekrol_szovegLBL.Location = new System.Drawing.Point(2, 206);
+            this.jatekrol_szovegLBL.Location = new System.Drawing.Point(3, 206);
             this.jatekrol_szovegLBL.Name = "jatekrol_szovegLBL";
             this.jatekrol_szovegLBL.Padding = new System.Windows.Forms.Padding(5);
             this.jatekrol_szovegLBL.Size = new System.Drawing.Size(438, 57);
@@ -101,19 +101,19 @@ namespace _2021_11_04_dama_GE_PB
             // szabalyok_szovegLBL
             // 
             this.szabalyok_szovegLBL.ForeColor = System.Drawing.Color.White;
-            this.szabalyok_szovegLBL.Location = new System.Drawing.Point(0, 356);
+            this.szabalyok_szovegLBL.Location = new System.Drawing.Point(-1, 331);
             this.szabalyok_szovegLBL.Name = "szabalyok_szovegLBL";
             this.szabalyok_szovegLBL.Padding = new System.Windows.Forms.Padding(5);
-            this.szabalyok_szovegLBL.Size = new System.Drawing.Size(438, 57);
+            this.szabalyok_szovegLBL.Size = new System.Drawing.Size(438, 82);
             this.szabalyok_szovegLBL.TabIndex = 5;
-            this.szabalyok_szovegLBL.Text = "- A fekete kezd\r\n- Nincs sorütés\r\n- A dáma a god mode";
+            this.szabalyok_szovegLBL.Text = "- A fekete kezd\r\n- Nincs sorütés\r\n- Ütéskényszer van\r\n- A dáma a god mode";
             this.szabalyok_szovegLBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // szabalyok_cimLBL
             // 
             this.szabalyok_cimLBL.BackColor = System.Drawing.Color.Gray;
             this.szabalyok_cimLBL.ForeColor = System.Drawing.Color.White;
-            this.szabalyok_cimLBL.Location = new System.Drawing.Point(0, 299);
+            this.szabalyok_cimLBL.Location = new System.Drawing.Point(0, 274);
             this.szabalyok_cimLBL.Name = "szabalyok_cimLBL";
             this.szabalyok_cimLBL.Size = new System.Drawing.Size(438, 57);
             this.szabalyok_cimLBL.TabIndex = 4;
