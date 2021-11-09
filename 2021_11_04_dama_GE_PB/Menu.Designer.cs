@@ -78,6 +78,7 @@ namespace _2021_11_04_dama_GE_PB
             this.infoBTN.TabStop = false;
             this.infoBTN.Text = "Info";
             this.infoBTN.UseVisualStyleBackColor = true;
+            this.infoBTN.Click += new System.EventHandler(this.infoBTN_Click);
             // 
             // multiBTN
             // 

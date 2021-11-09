@@ -117,5 +117,11 @@ namespace _2021_11_04_dama_GE_PB
             global.elore_hoz(global.multiplayer);
             global.header.Controls[0].Text = "Back";
         }
+
+        private void infoBTN_Click(object sender, EventArgs e)
+        {
+            global.elore_hoz(global.info);
+            global.header.Controls[0].Text = "Back";
+        }
     }
 }

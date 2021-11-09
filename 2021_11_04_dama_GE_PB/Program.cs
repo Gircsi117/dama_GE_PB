@@ -30,6 +30,7 @@ namespace _2021_11_04_dama_GE_PB
         public static UserControl jatekter;
         public static UserControl multiplayer;
         public static UserControl pause;
+        public static UserControl info;
 
         public static Panel header;
         public static UserControl kivalasztott;
