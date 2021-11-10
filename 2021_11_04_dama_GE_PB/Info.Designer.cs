@@ -30,12 +30,12 @@ namespace _2021_11_04_dama_GE_PB
         private void InitializeComponent()
         {
             this.centerPANEL = new System.Windows.Forms.Panel();
-            this.koszonet_cimLBL = new System.Windows.Forms.Label();
-            this.koszonet_szovegLBL = new System.Windows.Forms.Label();
-            this.jatekrol_szovegLBL = new System.Windows.Forms.Label();
-            this.jatekrol_cimLBL = new System.Windows.Forms.Label();
             this.szabalyok_szovegLBL = new System.Windows.Forms.Label();
             this.szabalyok_cimLBL = new System.Windows.Forms.Label();
+            this.jatekrol_szovegLBL = new System.Windows.Forms.Label();
+            this.jatekrol_cimLBL = new System.Windows.Forms.Label();
+            this.koszonet_szovegLBL = new System.Windows.Forms.Label();
+            this.koszonet_cimLBL = new System.Windows.Forms.Label();
             this.centerPANEL.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,27 +52,27 @@ namespace _2021_11_04_dama_GE_PB
             this.centerPANEL.Size = new System.Drawing.Size(438, 413);
             this.centerPANEL.TabIndex = 0;
             // 
-            // koszonet_cimLBL
+            // szabalyok_szovegLBL
             // 
-            this.koszonet_cimLBL.BackColor = System.Drawing.Color.Gray;
-            this.koszonet_cimLBL.ForeColor = System.Drawing.Color.White;
-            this.koszonet_cimLBL.Location = new System.Drawing.Point(0, 0);
-            this.koszonet_cimLBL.Name = "koszonet_cimLBL";
-            this.koszonet_cimLBL.Size = new System.Drawing.Size(438, 57);
-            this.koszonet_cimLBL.TabIndex = 0;
-            this.koszonet_cimLBL.Text = "Köszönet";
-            this.koszonet_cimLBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.szabalyok_szovegLBL.ForeColor = System.Drawing.Color.White;
+            this.szabalyok_szovegLBL.Location = new System.Drawing.Point(-1, 331);
+            this.szabalyok_szovegLBL.Name = "szabalyok_szovegLBL";
+            this.szabalyok_szovegLBL.Padding = new System.Windows.Forms.Padding(5);
+            this.szabalyok_szovegLBL.Size = new System.Drawing.Size(438, 82);
+            this.szabalyok_szovegLBL.TabIndex = 5;
+            this.szabalyok_szovegLBL.Text = "- A fekete kezd\r\n- Nincs sorütés\r\n- Ütéskényszer van\r\n- A dáma a god mode";
+            this.szabalyok_szovegLBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // koszonet_szovegLBL
+            // szabalyok_cimLBL
             // 
-            this.koszonet_szovegLBL.ForeColor = System.Drawing.Color.White;
-            this.koszonet_szovegLBL.Location = new System.Drawing.Point(3, 57);
-            this.koszonet_szovegLBL.Name = "koszonet_szovegLBL";
-            this.koszonet_szovegLBL.Padding = new System.Windows.Forms.Padding(5);
-            this.koszonet_szovegLBL.Size = new System.Drawing.Size(438, 57);
-            this.koszonet_szovegLBL.TabIndex = 1;
-            this.koszonet_szovegLBL.Text = "Szeretném megköszönni, hogy elindítottad a játékunkat.\r\nKöszi :D";
-            this.koszonet_szovegLBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.szabalyok_cimLBL.BackColor = System.Drawing.Color.Gray;
+            this.szabalyok_cimLBL.ForeColor = System.Drawing.Color.White;
+            this.szabalyok_cimLBL.Location = new System.Drawing.Point(0, 274);
+            this.szabalyok_cimLBL.Name = "szabalyok_cimLBL";
+            this.szabalyok_cimLBL.Size = new System.Drawing.Size(438, 57);
+            this.szabalyok_cimLBL.TabIndex = 4;
+            this.szabalyok_cimLBL.Text = "Szabályok";
+            this.szabalyok_cimLBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // jatekrol_szovegLBL
             // 
@@ -98,27 +98,28 @@ namespace _2021_11_04_dama_GE_PB
             this.jatekrol_cimLBL.Text = "A játékról";
             this.jatekrol_cimLBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // szabalyok_szovegLBL
+            // koszonet_szovegLBL
             // 
-            this.szabalyok_szovegLBL.ForeColor = System.Drawing.Color.White;
-            this.szabalyok_szovegLBL.Location = new System.Drawing.Point(-1, 331);
-            this.szabalyok_szovegLBL.Name = "szabalyok_szovegLBL";
-            this.szabalyok_szovegLBL.Padding = new System.Windows.Forms.Padding(5);
-            this.szabalyok_szovegLBL.Size = new System.Drawing.Size(438, 82);
-            this.szabalyok_szovegLBL.TabIndex = 5;
-            this.szabalyok_szovegLBL.Text = "- A fekete kezd\r\n- Nincs sorütés\r\n- Ütéskényszer van\r\n- A dáma a god mode";
-            this.szabalyok_szovegLBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.koszonet_szovegLBL.ForeColor = System.Drawing.Color.White;
+            this.koszonet_szovegLBL.Location = new System.Drawing.Point(3, 57);
+            this.koszonet_szovegLBL.Name = "koszonet_szovegLBL";
+            this.koszonet_szovegLBL.Padding = new System.Windows.Forms.Padding(5);
+            this.koszonet_szovegLBL.Size = new System.Drawing.Size(438, 74);
+            this.koszonet_szovegLBL.TabIndex = 1;
+            this.koszonet_szovegLBL.Text = "Szeretném megköszönni, hogy elindítottad a játékunkat.\r\nKöszi :D\r\n\r\nKészítők: Gil" +
+    "ián Erik, Pető Bálint László";
+            this.koszonet_szovegLBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // szabalyok_cimLBL
+            // koszonet_cimLBL
             // 
-            this.szabalyok_cimLBL.BackColor = System.Drawing.Color.Gray;
-            this.szabalyok_cimLBL.ForeColor = System.Drawing.Color.White;
-            this.szabalyok_cimLBL.Location = new System.Drawing.Point(0, 274);
-            this.szabalyok_cimLBL.Name = "szabalyok_cimLBL";
-            this.szabalyok_cimLBL.Size = new System.Drawing.Size(438, 57);
-            this.szabalyok_cimLBL.TabIndex = 4;
-            this.szabalyok_cimLBL.Text = "Szabályok";
-            this.szabalyok_cimLBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.koszonet_cimLBL.BackColor = System.Drawing.Color.Gray;
+            this.koszonet_cimLBL.ForeColor = System.Drawing.Color.White;
+            this.koszonet_cimLBL.Location = new System.Drawing.Point(0, 0);
+            this.koszonet_cimLBL.Name = "koszonet_cimLBL";
+            this.koszonet_cimLBL.Size = new System.Drawing.Size(438, 57);
+            this.koszonet_cimLBL.TabIndex = 0;
+            this.koszonet_cimLBL.Text = "Köszönet";
+            this.koszonet_cimLBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Info
             // 
