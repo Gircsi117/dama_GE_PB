@@ -13,7 +13,6 @@ namespace _2021_11_04_dama_GE_PB
     public partial class Jatekter : UserControl
     {
         static Panel[,] jatekter = new Panel[8, 8];
-        static Panel[,] babuk = new Panel[8, 8];
 
         public Jatekter()
         {
@@ -122,11 +121,11 @@ namespace _2021_11_04_dama_GE_PB
 
         private void babuk_general()
         {
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < 8; i += 2)
             {
                 for (int j = 0; j < 8; j++)
                 {
-
+                    
                 }
             }
         }
