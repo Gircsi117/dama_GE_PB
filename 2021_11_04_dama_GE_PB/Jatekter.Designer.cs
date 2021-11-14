@@ -29,12 +29,15 @@ namespace _2021_11_04_dama_GE_PB
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Jatekter));
             this.gamePANEL = new System.Windows.Forms.Panel();
             this.containerPANEL = new System.Windows.Forms.Panel();
             this.player2_PANEL = new System.Windows.Forms.Panel();
             this.p2LBL = new System.Windows.Forms.Label();
             this.player1_PANEL = new System.Windows.Forms.Panel();
             this.p1LBL = new System.Windows.Forms.Label();
+            this.babukIMAGELIST = new System.Windows.Forms.ImageList(this.components);
             this.containerPANEL.SuspendLayout();
             this.player2_PANEL.SuspendLayout();
             this.player1_PANEL.SuspendLayout();
@@ -100,6 +103,15 @@ namespace _2021_11_04_dama_GE_PB
             this.p1LBL.Text = "label1";
             this.p1LBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // babukIMAGELIST
+            // 
+            this.babukIMAGELIST.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("babukIMAGELIST.ImageStream")));
+            this.babukIMAGELIST.TransparentColor = System.Drawing.Color.Transparent;
+            this.babukIMAGELIST.Images.SetKeyName(0, "feher.png");
+            this.babukIMAGELIST.Images.SetKeyName(1, "feher_dama.png");
+            this.babukIMAGELIST.Images.SetKeyName(2, "fekete.png");
+            this.babukIMAGELIST.Images.SetKeyName(3, "fekete_dama.png");
+            // 
             // Jatekter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -126,5 +138,6 @@ namespace _2021_11_04_dama_GE_PB
         private System.Windows.Forms.Panel player1_PANEL;
         private System.Windows.Forms.Label p2LBL;
         private System.Windows.Forms.Label p1LBL;
+        private System.Windows.Forms.ImageList babukIMAGELIST;
     }
 }

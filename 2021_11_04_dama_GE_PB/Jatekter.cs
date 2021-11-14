@@ -12,8 +12,9 @@ namespace _2021_11_04_dama_GE_PB
 {
     public partial class Jatekter : UserControl
     {
-        static Panel[,] jatekter = new Panel[8, 8];
-        PictureBox selected;
+        public static Panel[,] jatekter = new Panel[8, 8];
+        public static string fel = "fekete";
+        public static PictureBox selected;
 
         public Jatekter()
         {
@@ -32,6 +33,7 @@ namespace _2021_11_04_dama_GE_PB
         private void Jatekter_SizeChanged(object sender, EventArgs e)
         {
             alap_general();
+            babu_meretez();
         }
 
         private void tabla_general()
@@ -51,15 +53,17 @@ namespace _2021_11_04_dama_GE_PB
                     pan.Size = new Size(szeles, szeles);
                     pan.Location = new Point(sor, oszlop);
                     pan.BackColor = (szin) ? (Color.White) : (Color.Black);
+                    pan.Click += mozgat;
+                    pan.Tag = $"{i};{j}";
                     szin = !szin;
 
-                    oszlop += szeles;
+                    sor += szeles;
 
                     jatekter[i, j] = pan;
                 }
                 szin = !szin;
-                sor += szeles;
-                oszlop = 12;
+                oszlop += szeles;
+                sor = 12;
             }
         }
 
@@ -77,7 +81,7 @@ namespace _2021_11_04_dama_GE_PB
                     if (gamePANEL.Controls.Count > 0)
                     {
                         gamePANEL.Controls[elemszam].Size = new Size(szeles, szeles);
-                        gamePANEL.Controls[elemszam].Location = new Point(sor, oszlop);
+                        gamePANEL.Controls[elemszam].Location = new Point(oszlop, sor);
                     }
                     oszlop += szeles;
                     elemszam++;
@@ -117,66 +121,209 @@ namespace _2021_11_04_dama_GE_PB
             p2LBL.Font = new Font("Arial", p2LBL.Height / 2);
             p2LBL.BorderStyle = BorderStyle.FixedSingle;
 
-            kijelol(0);
             tabla_meretez();
         }
 
         private void babuk_general()
         {
-            ImageList babukpng = new ImageList();
-            babukpng.Images.Add("feher", Image.FromFile("./Images/Feher.png"));
-            babukpng.Images.Add("feher_dama", Image.FromFile("./Images/feher_dama.png"));
-            babukpng.Images.Add("fekete", Image.FromFile("./Images/Fekete.png"));
-            babukpng.Images.Add("fekete_dama", Image.FromFile("./Images/fekete_dama.png"));
-
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < 3; i++)
             {
-                for (int j = 0; j < 3; j++)
+                for (int j = 0; j < 8; j++)
                 {
-                    if(jatekter[i, j].BackColor == Color.White)
+                    if(jatekter[j, i].BackColor == Color.White)
                     {
                         PictureBox babupng = new PictureBox();
-                        babupng.Image = babukpng.Images["fekete"];
-                        babupng.Size = new System.Drawing.Size(70, 70);
+                        babupng.Name = "feher";
+                        babupng.Image = babukIMAGELIST.Images[0];
+                        babupng.Size = new Size(gamePANEL.Controls[0].Width - 10, gamePANEL.Controls[0].Width - 10);
+                        babupng.Location = new Point(5, 5);
                         babupng.SizeMode = PictureBoxSizeMode.Zoom;
+                        babupng.Tag = $"{i};{j}";
                         jatekter[i, j].Controls.Add(babupng);
-                        babupng.Click += leptet;
+                        babupng.Click += lepes_hely;
                     }
                 }
             }
 
-            for (int i = 0; i < 8; i++)
+            for (int i = 5; i < 8; i++)
             {
-                for (int j = 5; j < 8; j++)
+                for (int j = 0; j < 8; j++)
                 {
-                    if (jatekter[i, j].BackColor == Color.White)
+                    if (jatekter[j, i].BackColor == Color.White)
                     {
                         PictureBox babupng = new PictureBox();
-                        babupng.Image = babukpng.Images["feher"];
-                        babupng.Size = new System.Drawing.Size(70, 70);
+                        babupng.Name = "fekete";
+                        babupng.Image = babukIMAGELIST.Images[2];
+                        babupng.Size = new Size(gamePANEL.Controls[0].Width - 10, gamePANEL.Controls[0].Width - 10);
+                        babupng.Location = new Point(5, 5);
                         babupng.SizeMode = PictureBoxSizeMode.Zoom;
-                        babupng.Tag = $"{i}{j}";
+                        babupng.Tag = $"{i};{j}";
                         jatekter[i, j].Controls.Add(babupng);
-                        babupng.Click += leptet;
+                        babupng.Click += lepes_hely;
+                    }
+                }
+            }
+
+            fel_valt();
+        }
+
+        private void babu_meretez()
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if (jatekter[i, j].Controls.Count > 0)
+                    {
+                        jatekter[i, j].Controls[0].Size = new Size(gamePANEL.Controls[0].Width - 10, gamePANEL.Controls[0].Width - 10);
+                        jatekter[i, j].Controls[0].Location = new Point(5, 5);
                     }
                 }
             }
         }
 
-        private void leptet(object sender, EventArgs e)
+        private void lepes_hely(object sender, EventArgs e)
         {
+            szin_torol();
+
             selected = sender as PictureBox;
-            int x = Convert.ToInt32(selected.Tag.ToString().Substring(0, 1));
-            int y = Convert.ToInt32(selected.Tag.ToString().Substring(1, 1));
-            //MessageBox.Show($"{x}{y}");
+            int ii = Convert.ToInt32(selected.Tag.ToString().Split(';')[0]);
+            int jj = Convert.ToInt32(selected.Tag.ToString().Split(';')[1]);
 
+            if (selected.Name.Contains("feher"))
+            {
+                if (selected.Name == "feher")
+                {
+                    hely_kijelol(ii, jj, 1, -1);
+                    hely_kijelol(ii, jj, 1, 1);
+                }
+            }
+            else
+            {
+                if (selected.Name == "fekete")
+                {
+                    hely_kijelol(ii, jj, -1, -1);
+                    hely_kijelol(ii, jj, -1, 1);
+                }
+            }
+        }
 
+        private void hely_kijelol(int ii, int jj, int irany_ii, int irany_jj, bool damae = false)
+        {
+            if (ii + irany_ii >= 0 && jj + irany_jj >= 0 && ii + irany_ii < 8 && jj + irany_jj < 8)
+            {
+                if (!damae)
+                {
+                    if (jatekter[ii + irany_ii, jj + irany_jj].Controls.Count == 0)
+                    {
+                        jatekter[ii + irany_ii, jj + irany_jj].BackColor = Color.Yellow;
+                    }
+                    else if (jatekter[ii + irany_ii, jj + irany_jj].Controls.Count != 0 && jatekter[ii + irany_ii, jj + irany_jj].Enabled == false)
+                    {
+                        if (ii + irany_ii * 2 >= 0 && jj + irany_jj * 2 >= 0 && ii + irany_ii * 2 < 8 && jj + irany_jj * 2 < 8)
+                        {
+                            if (jatekter[ii + irany_ii * 2, jj + irany_jj * 2].Controls.Count == 0)
+                            {
+                                jatekter[ii + irany_ii, jj + irany_jj].BackColor = Color.Pink;
+                                jatekter[ii + irany_ii * 2, jj + irany_jj * 2].BackColor = Color.Red;
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+
+        private void mozgat(object sender, EventArgs e)
+        {
+            Panel pan = sender as Panel;
+
+            if (pan.BackColor == Color.Yellow)
+            {
+                pan.Controls.Add(selected);
+                selected.Tag = pan.Tag;
+            }
+            else if (pan.BackColor == Color.Red)
+            {
+                pan.Controls.Add(selected);
+                selected.Tag = pan.Tag;
+                for (int i = 0; i < 8; i++)
+                {
+                    for (int j = 0; j < 8; j++)
+                    {
+                        if (jatekter[i, j].BackColor == Color.Pink)
+                        {
+                            jatekter[i, j].Controls.Clear();
+                            jatekter[i, j].Enabled = true;
+                        }
+                    }
+                }
+            }
+
+            if (pan.BackColor != Color.White && pan.BackColor != Color.Black)
+            {
+                switch (fel)
+                {
+                    case "fekete": fel = "feher"; break;
+                    case "feher": fel = "fekete"; break;
+
+                    default: break;
+                }
+
+                szin_torol();
+                fel_valt();
+            }
+        }
+
+        private void szin_torol()
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if (jatekter[i, j].BackColor != Color.Black && jatekter[i, j].BackColor != Color.White)
+                    {
+                        jatekter[i, j].BackColor = Color.White;
+                    }
+                }
+            }
+        }
+
+        private void fel_valt()
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if (jatekter[i, j].Controls.Count > 0)
+                    {
+                        if (jatekter[i, j].Controls[0].Name == fel)
+                        {
+                            jatekter[i, j].Enabled = true;
+                        }
+                        else
+                        {
+                            jatekter[i, j].Enabled = false;
+                            jatekter[i, j].BackColor = Color.LightSkyBlue;
+                        }
+                    }
+                }
+            }
+
+            switch (fel)
+            {
+                case "fekete": kijelol(0); break;
+                case "feher": kijelol(1); break;
+
+                default: break;
+            }
         }
 
         private void kijelol(int index)
         {
             Panel[] panelek = new Panel[2] { player1_PANEL, player2_PANEL };
             Label[] labelek = new Label[2] { p1LBL, p2LBL };
+
             for (int i = 0; i < panelek.Length; i++)
             {
                 if (i == index)
@@ -205,6 +352,12 @@ namespace _2021_11_04_dama_GE_PB
             {
                 p1LBL.Text = global.nevek[0];
                 p2LBL.Text = global.nevek[1];
+
+                fel_valt();
+                fel = "fekete";
+
+                tabla_general();
+                babuk_general();
             }
         }
     }
