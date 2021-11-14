@@ -13,6 +13,7 @@ namespace _2021_11_04_dama_GE_PB
     public partial class Jatekter : UserControl
     {
         static Panel[,] jatekter = new Panel[8, 8];
+        PictureBox selected;
 
         public Jatekter()
         {
@@ -25,6 +26,7 @@ namespace _2021_11_04_dama_GE_PB
             global.meretez_alap(gamePANEL, this);
             tabla_general();
             tabla_meretez();
+            babuk_general();
         }
 
         private void Jatekter_SizeChanged(object sender, EventArgs e)
@@ -121,13 +123,54 @@ namespace _2021_11_04_dama_GE_PB
 
         private void babuk_general()
         {
-            for (int i = 0; i < 8; i += 2)
+            ImageList babukpng = new ImageList();
+            babukpng.Images.Add("feher", Image.FromFile("./Images/Feher.png"));
+            babukpng.Images.Add("feher_dama", Image.FromFile("./Images/feher_dama.png"));
+            babukpng.Images.Add("fekete", Image.FromFile("./Images/Fekete.png"));
+            babukpng.Images.Add("fekete_dama", Image.FromFile("./Images/fekete_dama.png"));
+
+            for (int i = 0; i < 8; i++)
             {
-                for (int j = 0; j < 8; j++)
+                for (int j = 0; j < 3; j++)
                 {
-                    
+                    if(jatekter[i, j].BackColor == Color.White)
+                    {
+                        PictureBox babupng = new PictureBox();
+                        babupng.Image = babukpng.Images["fekete"];
+                        babupng.Size = new System.Drawing.Size(70, 70);
+                        babupng.SizeMode = PictureBoxSizeMode.Zoom;
+                        jatekter[i, j].Controls.Add(babupng);
+                        babupng.Click += leptet;
+                    }
                 }
             }
+
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 5; j < 8; j++)
+                {
+                    if (jatekter[i, j].BackColor == Color.White)
+                    {
+                        PictureBox babupng = new PictureBox();
+                        babupng.Image = babukpng.Images["feher"];
+                        babupng.Size = new System.Drawing.Size(70, 70);
+                        babupng.SizeMode = PictureBoxSizeMode.Zoom;
+                        babupng.Tag = $"{i}{j}";
+                        jatekter[i, j].Controls.Add(babupng);
+                        babupng.Click += leptet;
+                    }
+                }
+            }
+        }
+
+        private void leptet(object sender, EventArgs e)
+        {
+            selected = sender as PictureBox;
+            int x = Convert.ToInt32(selected.Tag.ToString().Substring(0, 1));
+            int y = Convert.ToInt32(selected.Tag.ToString().Substring(1, 1));
+            //MessageBox.Show($"{x}{y}");
+
+
         }
 
         private void kijelol(int index)

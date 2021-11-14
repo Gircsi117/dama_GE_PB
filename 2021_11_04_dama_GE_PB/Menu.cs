@@ -19,7 +19,7 @@ namespace _2021_11_04_dama_GE_PB
 
         private void Menu_Load(object sender, EventArgs e)
         {
-            //telje sképernyő
+            //teljes képernyő
             this.BorderStyle = BorderStyle.None;
             this.Dock = DockStyle.Fill;
 
