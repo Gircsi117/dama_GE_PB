@@ -139,7 +139,7 @@ namespace _2021_11_04_dama_GE_PB
             this.cimLBL.Name = "cimLBL";
             this.cimLBL.Size = new System.Drawing.Size(500, 88);
             this.cimLBL.TabIndex = 0;
-            this.cimLBL.Text = "Dáma strike";
+            this.cimLBL.Text = "Dáma játék";
             this.cimLBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Menu
