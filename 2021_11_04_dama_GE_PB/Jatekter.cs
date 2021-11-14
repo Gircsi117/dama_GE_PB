@@ -246,7 +246,7 @@ namespace _2021_11_04_dama_GE_PB
                     }
                 }
 
-                if (damae && (jatekter[ii, jj].BackColor == Color.Yellow || jatekter[ii, jj].Enabled == true) && mehet)
+                if (damae && (jatekter[ii, jj].BackColor == Color.Yellow || jatekter[ii, jj].Enabled == true) && jatekter[ii + irany_ii, jj + irany_jj].Controls.Count == 0 && mehet)
                 {
                     hely_kijelol((ii + irany_ii), (jj + irany_jj), irany_ii, irany_jj, true);
                 }
@@ -258,6 +258,7 @@ namespace _2021_11_04_dama_GE_PB
             Panel pan = sender as Panel;
             int sor = Convert.ToInt32(pan.Tag.ToString().Split(';')[0]);
 
+            //Színezés
             if (pan.BackColor == Color.Yellow)
             {
                 pan.Controls.Add(selected);
@@ -280,6 +281,7 @@ namespace _2021_11_04_dama_GE_PB
                 }
             }
 
+            //Dáma létrehozása
             if (selected.Name.Contains("feher") && sor == 7)
             {
                 selected.Image = babukIMAGELIST.Images[1];
@@ -291,6 +293,7 @@ namespace _2021_11_04_dama_GE_PB
                 selected.Name = "fekete_dama";
             }
 
+            //játékos váltás
             if (pan.BackColor != Color.White && pan.BackColor != Color.Black)
             {
                 switch (fel)
@@ -303,6 +306,32 @@ namespace _2021_11_04_dama_GE_PB
 
                 szin_torol();
                 fel_valt();
+                babuszam_vizsgal();
+            }
+        }
+
+        private void babuszam_vizsgal()
+        {
+            int db = 0;
+
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if (jatekter[i, j].Controls.Count > 0)
+                    {
+                        if (jatekter[i, j].Controls[0].Name.Contains(fel))
+                        {
+                            db++;
+                            //MessageBox.Show("alma");
+                        }
+                    }
+                }
+            }
+
+            if (db == 0)
+            {
+                game_over();
             }
         }
 
@@ -377,6 +406,23 @@ namespace _2021_11_04_dama_GE_PB
             }
         }
 
+        private void game_over()
+        {
+            string nev;
+
+            if (fel == "feher")
+            {
+                nev = p1LBL.Text;
+            }
+            else
+            {
+                nev = p2LBL.Text;
+            }
+
+            MessageBox.Show($"Game Over\nNyertes: {nev}", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            global.elore_hoz(global.menu);
+        }
+
         private void Jatekter_VisibleChanged(object sender, EventArgs e)
         {
             if (this.Visible == true)
@@ -390,6 +436,11 @@ namespace _2021_11_04_dama_GE_PB
                 tabla_general();
                 babuk_general();
             }
+        }
+
+        private void gamePANEL_Click(object sender, EventArgs e)
+        {
+            //game_over();
         }
     }
 }

@@ -50,6 +50,7 @@ namespace _2021_11_04_dama_GE_PB
             this.gamePANEL.Name = "gamePANEL";
             this.gamePANEL.Size = new System.Drawing.Size(391, 353);
             this.gamePANEL.TabIndex = 0;
+            this.gamePANEL.Click += new System.EventHandler(this.gamePANEL_Click);
             // 
             // containerPANEL
             // 
