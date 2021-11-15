@@ -30,7 +30,7 @@ namespace _2021_11_04_dama_GE_PB
             atadas();
 
             //telje sképernyő
-            this.TopMost = true;
+            //this.TopMost = true;
             this.FormBorderStyle = FormBorderStyle.None;
 
             int szeles = Screen.PrimaryScreen.WorkingArea.Width;

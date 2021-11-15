@@ -190,6 +190,7 @@ namespace _2021_11_04_dama_GE_PB
             int ii = Convert.ToInt32(selected.Tag.ToString().Split(';')[0]);
             int jj = Convert.ToInt32(selected.Tag.ToString().Split(';')[1]);
 
+
             if (selected.Name.Contains("feher"))
             {
                 if (selected.Name == "feher")
@@ -242,7 +243,6 @@ namespace _2021_11_04_dama_GE_PB
                             jatekter[ii + irany_ii * 2, jj + irany_jj * 2].BackColor = Color.Red;
                             mehet = false;
                         }
-
                     }
                 }
 
@@ -252,6 +252,21 @@ namespace _2021_11_04_dama_GE_PB
                 }
             }
         }
+
+        /*private static bool utes_kenyszer(int utes)
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if(jatekter[i, j].BackColor == Color.Red)
+                    {
+                        jatekter[i, j].Enabled = false;
+
+                    }
+                }
+            }
+        }*/
 
         private void mozgat(object sender, EventArgs e)
         {
