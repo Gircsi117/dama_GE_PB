@@ -241,6 +241,7 @@ namespace _2021_11_04_dama_GE_PB
                         {
                             jatekter[ii + irany_ii, jj + irany_jj].BackColor = Color.Pink;
                             jatekter[ii + irany_ii * 2, jj + irany_jj * 2].BackColor = Color.Red;
+                            jatekter[ii + irany_ii * 2, jj + irany_jj * 2].Name = $"{ii + irany_ii};{jj + irany_jj}";
                             mehet = false;
                             //utes_kenyszer(true);
                         }
@@ -294,17 +295,10 @@ namespace _2021_11_04_dama_GE_PB
             {
                 pan.Controls.Add(selected);
                 selected.Tag = pan.Tag;
-                for (int i = 0; i < 8; i++)
-                {
-                    for (int j = 0; j < 8; j++)
-                    {
-                        if (jatekter[i, j].BackColor == Color.Pink)
-                        {
-                            jatekter[i, j].Controls.Clear();
-                            jatekter[i, j].Enabled = true;
-                        }
-                    }
-                }
+                int sor_leutendo = Convert.ToInt32(pan.Name.Split(';')[0]);
+                int oszlop_leutendo = Convert.ToInt32(pan.Name.Split(';')[1]);
+                jatekter[sor_leutendo, oszlop_leutendo].Controls.Clear();
+                jatekter[sor_leutendo, oszlop_leutendo].Enabled = true;
             }
 
             //Dáma létrehozása
