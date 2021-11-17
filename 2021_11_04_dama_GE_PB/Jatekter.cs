@@ -184,7 +184,7 @@ namespace _2021_11_04_dama_GE_PB
 
         private void lepes_hely(object sender, EventArgs e)
         {
-            szin_torol();
+            szin_torol(true);
 
             selected = sender as PictureBox;
             int ii = Convert.ToInt32(selected.Tag.ToString().Split(';')[0]);
@@ -233,18 +233,18 @@ namespace _2021_11_04_dama_GE_PB
                 {
                     jatekter[ii + irany_ii, jj + irany_jj].BackColor = Color.Yellow;
                 }
-                else if (jatekter[ii + irany_ii, jj + irany_jj].Controls.Count != 0 && selected.Name != jatekter[ii + irany_ii, jj + irany_jj].Name)
+                else if (jatekter[ii + irany_ii, jj + irany_jj].Controls.Count != 0 && jatekter[ii + irany_ii, jj + irany_jj].Enabled == false)
                 {
                     if (ii + irany_ii * 2 >= 0 && jj + irany_jj * 2 >= 0 && ii + irany_ii * 2 < 8 && jj + irany_jj * 2 < 8)
                     {
-                        if (jatekter[ii + irany_ii * 2, jj + irany_jj * 2].Controls.Count == 0) //&& selected.Name != jatekter[ii + irany_ii, jj + irany_jj].Name)
+                        if (jatekter[ii + irany_ii * 2, jj + irany_jj * 2].Controls.Count == 0)
                         {
                             jatekter[ii + irany_ii, jj + irany_jj].BackColor = Color.Pink;
                             jatekter[ii + irany_ii * 2, jj + irany_jj * 2].BackColor = Color.Red;
-                            jatekter[ii + irany_ii * 2, jj + irany_jj * 2].Name = $"{ii + irany_ii};{jj + irany_jj}";
                             mehet = false;
-                            //utes_kenyszer(true);
+                            jatekter[ii + irany_ii * 2, jj + irany_jj * 2].Name = $"{ii + irany_ii};{jj + irany_jj}";
                         }
+
                     }
                 }
 
@@ -302,15 +302,18 @@ namespace _2021_11_04_dama_GE_PB
             }
 
             //Dáma létrehozása
-            if (selected.Name.Contains("feher") && sor == 7)
+            if (selected != null)
             {
-                selected.Image = babukIMAGELIST.Images[1];
-                selected.Name = "feher_dama";
-            }
-            else if (selected.Name.Contains("fekete") && sor == 0)
-            {
-                selected.Image = babukIMAGELIST.Images[3];
-                selected.Name = "fekete_dama";
+                if (selected.Name.Contains("feher") && sor == 7)
+                {
+                    selected.Image = babukIMAGELIST.Images[1];
+                    selected.Name = "feher_dama";
+                }
+                else if (selected.Name.Contains("fekete") && sor == 0)
+                {
+                    selected.Image = babukIMAGELIST.Images[3];
+                    selected.Name = "fekete_dama";
+                }
             }
 
             //játékos váltás
@@ -324,7 +327,11 @@ namespace _2021_11_04_dama_GE_PB
                     default: break;
                 }
 
-                szin_torol();
+                if (pan.BackColor == Color.Yellow || pan.BackColor == Color.Red)
+                {
+                    szin_torol(false);
+                }
+                
                 fel_valt();
                 babuszam_vizsgal();
             }
@@ -355,7 +362,7 @@ namespace _2021_11_04_dama_GE_PB
             }
         }
 
-        private void szin_torol()
+        private void szin_torol(bool mehet)
         {
             for (int i = 0; i < 8; i++)
             {
@@ -363,6 +370,10 @@ namespace _2021_11_04_dama_GE_PB
                 {
                     if (jatekter[i, j].BackColor != Color.Black && jatekter[i, j].BackColor != Color.White)
                     {
+                        if (mehet && jatekter[i, j].BackColor == Color.LightSkyBlue)
+                        {
+                            continue;
+                        }
                         jatekter[i, j].BackColor = Color.White;
                     }
                 }
