@@ -233,15 +233,16 @@ namespace _2021_11_04_dama_GE_PB
                 {
                     jatekter[ii + irany_ii, jj + irany_jj].BackColor = Color.Yellow;
                 }
-                else if (jatekter[ii + irany_ii, jj + irany_jj].Controls.Count != 0 && jatekter[ii + irany_ii, jj + irany_jj].Enabled == false)
+                else if (jatekter[ii + irany_ii, jj + irany_jj].Controls.Count != 0 && selected.Name != jatekter[ii + irany_ii, jj + irany_jj].Name)
                 {
                     if (ii + irany_ii * 2 >= 0 && jj + irany_jj * 2 >= 0 && ii + irany_ii * 2 < 8 && jj + irany_jj * 2 < 8)
                     {
-                        if (jatekter[ii + irany_ii * 2, jj + irany_jj * 2].Controls.Count == 0)
+                        if (jatekter[ii + irany_ii * 2, jj + irany_jj * 2].Controls.Count == 0) //&& selected.Name != jatekter[ii + irany_ii, jj + irany_jj].Name)
                         {
                             jatekter[ii + irany_ii, jj + irany_jj].BackColor = Color.Pink;
                             jatekter[ii + irany_ii * 2, jj + irany_jj * 2].BackColor = Color.Red;
                             mehet = false;
+                            //utes_kenyszer(true);
                         }
                     }
                 }
@@ -253,20 +254,30 @@ namespace _2021_11_04_dama_GE_PB
             }
         }
 
-        /*private static bool utes_kenyszer(int utes)
+        private void utes_kenyszer(bool kenyszer)
         {
-            for (int i = 0; i < 8; i++)
+            if (kenyszer)
             {
-                for (int j = 0; j < 8; j++)
+                for (int i = 0; i < 8; i++)
                 {
-                    if(jatekter[i, j].BackColor == Color.Red)
+                    for (int j = 0; j < 8; j++)
                     {
                         jatekter[i, j].Enabled = false;
+                    }
+                }
 
+                for (int i = 0; i < 8; i++)
+                {
+                    for (int j = 0; j < 8; j++)
+                    {
+                        if (jatekter[i, j].BackColor == Color.Red)
+                        {
+                            jatekter[i, j].Enabled = true;
+                        }
                     }
                 }
             }
-        }*/
+        }
 
         private void mozgat(object sender, EventArgs e)
         {
