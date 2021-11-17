@@ -302,7 +302,7 @@ namespace _2021_11_04_dama_GE_PB
             }
 
             //Dáma létrehozása
-            if (selected != null)
+            if (selected != null && (pan.BackColor == Color.Yellow || pan.BackColor == Color.Red))
             {
                 if (selected.Name.Contains("feher") && sor == 7)
                 {
