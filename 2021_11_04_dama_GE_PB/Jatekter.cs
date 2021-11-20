@@ -232,6 +232,7 @@ namespace _2021_11_04_dama_GE_PB
                 if (jatekter[ii + irany_ii, jj + irany_jj].Controls.Count == 0)
                 {
                     jatekter[ii + irany_ii, jj + irany_jj].BackColor = Color.Yellow;
+                    
                 }
                 else if (jatekter[ii + irany_ii, jj + irany_jj].Controls.Count != 0 && jatekter[ii + irany_ii, jj + irany_jj].Enabled == false)
                 {
@@ -243,6 +244,8 @@ namespace _2021_11_04_dama_GE_PB
                             jatekter[ii + irany_ii * 2, jj + irany_jj * 2].BackColor = Color.Red;
                             mehet = false;
                             jatekter[ii + irany_ii * 2, jj + irany_jj * 2].Name = $"{ii + irany_ii};{jj + irany_jj}";
+
+                            utes_kenyszer();
                         }
 
                     }
@@ -255,26 +258,17 @@ namespace _2021_11_04_dama_GE_PB
             }
         }
 
-        private void utes_kenyszer(bool kenyszer)
+        private void utes_kenyszer()
         {
-            if (kenyszer)
+            for (int i = 0; i < 8; i++)
             {
-                for (int i = 0; i < 8; i++)
+                for (int j = 0; j < 8; j++)
                 {
-                    for (int j = 0; j < 8; j++)
-                    {
-                        jatekter[i, j].Enabled = false;
-                    }
-                }
+                    jatekter[i, j].Enabled = false;
 
-                for (int i = 0; i < 8; i++)
-                {
-                    for (int j = 0; j < 8; j++)
+                    if (jatekter[i, j].BackColor == Color.Red)
                     {
-                        if (jatekter[i, j].BackColor == Color.Red)
-                        {
-                            jatekter[i, j].Enabled = true;
-                        }
+                        jatekter[i, j].Enabled = true;
                     }
                 }
             }
