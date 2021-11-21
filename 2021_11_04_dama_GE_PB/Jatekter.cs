@@ -244,8 +244,6 @@ namespace _2021_11_04_dama_GE_PB
                             jatekter[ii + irany_ii * 2, jj + irany_jj * 2].BackColor = Color.Red;
                             mehet = false;
                             jatekter[ii + irany_ii * 2, jj + irany_jj * 2].Name = $"{ii + irany_ii};{jj + irany_jj}";
-
-                            utes_kenyszer();
                         }
 
                     }
@@ -254,22 +252,6 @@ namespace _2021_11_04_dama_GE_PB
                 if (damae && (jatekter[ii, jj].BackColor == Color.Yellow || jatekter[ii, jj].Enabled == true) && jatekter[ii + irany_ii, jj + irany_jj].Controls.Count == 0 && mehet)
                 {
                     hely_kijelol((ii + irany_ii), (jj + irany_jj), irany_ii, irany_jj, true);
-                }
-            }
-        }
-
-        private void utes_kenyszer()
-        {
-            for (int i = 0; i < 8; i++)
-            {
-                for (int j = 0; j < 8; j++)
-                {
-                    jatekter[i, j].Enabled = false;
-
-                    if (jatekter[i, j].BackColor == Color.Red)
-                    {
-                        jatekter[i, j].Enabled = true;
-                    }
                 }
             }
         }
