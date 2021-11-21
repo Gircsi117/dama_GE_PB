@@ -15,6 +15,8 @@ namespace _2021_11_04_dama_GE_PB
         public static Panel[,] jatekter = new Panel[8, 8];
         public static string fel = "fekete";
         public static PictureBox selected;
+        public static List<PictureBox> lephetnek = new List<PictureBox>() { };
+        public static List<Panel> uthetnek = new List<Panel>() { };
 
         public Jatekter()
         {
@@ -221,6 +223,20 @@ namespace _2021_11_04_dama_GE_PB
                     hely_kijelol(ii, jj, -1, 1, true);
                 }
             }
+
+            if (jatekter[ii, jj].BackColor == Color.Green)
+            {
+                for (int i = 0; i < 8; i++)
+                {
+                    for (int j = 0; j < 8; j++)
+                    {
+                        if (jatekter[i, j].BackColor == Color.Yellow)
+                        {
+                            jatekter[i, j].BackColor = Color.White;
+                        }
+                    }
+                }
+            }
         }
 
         private void hely_kijelol(int ii, int jj, int irany_ii, int irany_jj, bool damae = false)
@@ -233,7 +249,7 @@ namespace _2021_11_04_dama_GE_PB
                 {
                     jatekter[ii + irany_ii, jj + irany_jj].BackColor = Color.Yellow;
                 }
-                else if (jatekter[ii + irany_ii, jj + irany_jj].Controls.Count != 0 && jatekter[ii + irany_ii, jj + irany_jj].Enabled == false)
+                else if (jatekter[ii + irany_ii, jj + irany_jj].Controls.Count != 0 && jatekter[ii + irany_ii, jj + irany_jj].Enabled == false && !jatekter[ii + irany_ii, jj + irany_jj].Controls[0].Name.Contains(selected.Name.Split('_')[0]))
                 {
                     if (ii + irany_ii * 2 >= 0 && jj + irany_jj * 2 >= 0 && ii + irany_ii * 2 < 8 && jj + irany_jj * 2 < 8)
                     {
@@ -241,6 +257,7 @@ namespace _2021_11_04_dama_GE_PB
                         {
                             jatekter[ii + irany_ii, jj + irany_jj].BackColor = Color.Pink;
                             jatekter[ii + irany_ii * 2, jj + irany_jj * 2].BackColor = Color.Red;
+                            jatekter[ii + irany_ii * 2, jj + irany_jj * 2].Enabled = true;
                             mehet = false;
                             jatekter[ii + irany_ii * 2, jj + irany_jj * 2].Name = $"{ii + irany_ii};{jj + irany_jj}";
                         }
@@ -251,31 +268,6 @@ namespace _2021_11_04_dama_GE_PB
                 if (damae && (jatekter[ii, jj].BackColor == Color.Yellow || jatekter[ii, jj].Enabled == true) && jatekter[ii + irany_ii, jj + irany_jj].Controls.Count == 0 && mehet)
                 {
                     hely_kijelol((ii + irany_ii), (jj + irany_jj), irany_ii, irany_jj, true);
-                }
-            }
-        }
-
-        private void utes_kenyszer(bool kenyszer)
-        {
-            if (kenyszer)
-            {
-                for (int i = 0; i < 8; i++)
-                {
-                    for (int j = 0; j < 8; j++)
-                    {
-                        jatekter[i, j].Enabled = false;
-                    }
-                }
-
-                for (int i = 0; i < 8; i++)
-                {
-                    for (int j = 0; j < 8; j++)
-                    {
-                        if (jatekter[i, j].BackColor == Color.Red)
-                        {
-                            jatekter[i, j].Enabled = true;
-                        }
-                    }
                 }
             }
         }
@@ -331,9 +323,106 @@ namespace _2021_11_04_dama_GE_PB
                 {
                     szin_torol(false);
                 }
-                
+
                 fel_valt();
+                lephetoseg();
                 babuszam_vizsgal();
+                lephetnek.Clear();
+                uthetnek.Clear();
+            }
+        }
+
+        private void lephetoseg()
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if (jatekter[i,j].Controls.Count > 0)
+                    {
+                        if (jatekter[i, j].Controls[0].Name == "feher" && fel == "feher")
+                        {
+                            lepeskenyszer(i, j, 1, -1);
+                            lepeskenyszer(i, j, 1, 1);
+                        }
+                        else if (selected.Name == "feher_dama" && fel == "feher")
+                        {
+                            lepeskenyszer(i, j, 1, -1, true);
+                            lepeskenyszer(i, j, 1, 1, true);
+                            lepeskenyszer(i, j, -1, -1, true);
+                            lepeskenyszer(i, j, -1, 1, true);
+                        }
+                        else if (jatekter[i, j].Controls[0].Name == "fekete" && fel == "fekete")
+                        {
+                            lepeskenyszer(i, j, -1, -1);
+                            lepeskenyszer(i, j, -1, 1);
+                        }
+                        else if (selected.Name == "fekete_dama" && fel == "fekete")
+                        {
+                            lepeskenyszer(i, j, 1, -1, true);
+                            lepeskenyszer(i, j, 1, 1, true);
+                            lepeskenyszer(i, j, -1, -1, true);
+                            lepeskenyszer(i, j, -1, 1, true);
+                        }
+
+                    }
+                }
+            }
+            if (lephetnek.Count == 0)
+            {
+                game_over();
+            }
+
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if (uthetnek.Count > 0)
+                    {
+                        if (uthetnek.Contains(jatekter[i, j]))
+                        {
+                            //MessageBox.Show($"{i} - {j}");
+                            jatekter[i, j].BackColor = Color.Green;
+                            jatekter[i, j].Enabled = true;
+                        }
+                        else if(!uthetnek.Contains(jatekter[i, j]) && jatekter[i, j].Controls.Count > 0)
+                        {
+                            jatekter[i, j].Enabled = false;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        private void lepeskenyszer(int ii, int jj, int irany_ii, int irany_jj, bool damae = false)
+        {
+            bool mehet = true;
+
+            if (ii + irany_ii >= 0 && jj + irany_jj >= 0 && ii + irany_ii < 8 && jj + irany_jj < 8)
+            {
+                if (jatekter[ii + irany_ii, jj + irany_jj].Controls.Count == 0)
+                {
+                    lephetnek.Add(jatekter[ii, jj].Controls[0] as PictureBox);
+                }
+                else if (jatekter[ii + irany_ii, jj + irany_jj].Controls.Count != 0 && jatekter[ii + irany_ii, jj + irany_jj].Enabled == false && !jatekter[ii + irany_ii, jj + irany_jj].Controls[0].Name.Contains(jatekter[ii, jj].Controls[0].Name.Split('_')[0]))
+                {
+                    if (ii + irany_ii * 2 >= 0 && jj + irany_jj * 2 >= 0 && ii + irany_ii * 2 < 8 && jj + irany_jj * 2 < 8)
+                    {
+                        if (jatekter[ii + irany_ii * 2, jj + irany_jj * 2].Controls.Count == 0)
+                        {
+                            lephetnek.Add(jatekter[ii, jj].Controls[0] as PictureBox);
+                            uthetnek.Add(jatekter[ii, jj]);
+                            mehet = false;
+                        }
+
+                    }
+                }
+
+                if (damae && (jatekter[ii, jj].BackColor == Color.Yellow || jatekter[ii, jj].Enabled == true) && jatekter[ii + irany_ii, jj + irany_jj].Controls.Count == 0 && mehet)
+                {
+                    lepeskenyszer((ii + irany_ii), (jj + irany_jj), irany_ii, irany_jj, true);
+                }
             }
         }
 
@@ -350,7 +439,6 @@ namespace _2021_11_04_dama_GE_PB
                         if (jatekter[i, j].Controls[0].Name.Contains(fel))
                         {
                             db++;
-                            //MessageBox.Show("alma");
                         }
                     }
                 }
@@ -370,7 +458,7 @@ namespace _2021_11_04_dama_GE_PB
                 {
                     if (jatekter[i, j].BackColor != Color.Black && jatekter[i, j].BackColor != Color.White)
                     {
-                        if (mehet && jatekter[i, j].BackColor == Color.LightSkyBlue)
+                        if (mehet && (jatekter[i, j].BackColor == Color.LightSkyBlue || jatekter[i, j].BackColor == Color.Green))
                         {
                             continue;
                         }
