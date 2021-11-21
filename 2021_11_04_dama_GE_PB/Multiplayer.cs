@@ -53,7 +53,8 @@ namespace _2021_11_04_dama_GE_PB
 
         private void downloadBTN_MouseClick(object sender, MouseEventArgs e)
         {
-            Application.Restart();
+            MessageBox.Show("Végzetes hiba történt!\nA program összeomlott!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            Application.Exit();
         }
     }
 }
