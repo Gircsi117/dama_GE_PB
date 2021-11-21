@@ -310,7 +310,7 @@ namespace _2021_11_04_dama_GE_PB
             }
 
             //játékos váltás
-            if (pan.BackColor != Color.White && pan.BackColor != Color.Black)
+            if (pan.BackColor != Color.White && pan.BackColor != Color.Black && pan.BackColor != Color.Green)
             {
                 switch (fel)
                 {
