@@ -348,10 +348,10 @@ namespace _2021_11_04_dama_GE_PB
                         }
                         else if (jatekter[i, j].Controls[0].Name == "feher_dama" && fel == "feher")
                         {
-                            lepeskenyszer(i, j, 1, -1, true);
-                            lepeskenyszer(i, j, 1, 1, true);
-                            lepeskenyszer(i, j, -1, -1, true);
-                            lepeskenyszer(i, j, -1, 1, true);
+                            lepeskenyszer(i, j, 1, -1);
+                            lepeskenyszer(i, j, 1, 1);
+                            lepeskenyszer(i, j, -1, -1);
+                            lepeskenyszer(i, j, -1, 1);
                         }
                         else if (jatekter[i, j].Controls[0].Name == "fekete" && fel == "fekete")
                         {
@@ -360,10 +360,10 @@ namespace _2021_11_04_dama_GE_PB
                         }
                         else if (jatekter[i, j].Controls[0].Name == "fekete_dama" && fel == "fekete")
                         {
-                            lepeskenyszer(i, j, 1, -1, true);
-                            lepeskenyszer(i, j, 1, 1, true);
-                            lepeskenyszer(i, j, -1, -1, true);
-                            lepeskenyszer(i, j, -1, 1, true);
+                            lepeskenyszer(i, j, 1, -1);
+                            lepeskenyszer(i, j, 1, 1);
+                            lepeskenyszer(i, j, -1, -1);
+                            lepeskenyszer(i, j, -1, 1);
                         }
 
                     }
@@ -395,7 +395,7 @@ namespace _2021_11_04_dama_GE_PB
 
         }
 
-        private void lepeskenyszer(int ii, int jj, int irany_ii, int irany_jj, bool damae = false)
+        private void lepeskenyszer(int ii, int jj, int irany_ii, int irany_jj)
         {
             bool mehet = true;
 
