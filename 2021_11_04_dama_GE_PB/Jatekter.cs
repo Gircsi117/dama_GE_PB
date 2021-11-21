@@ -248,6 +248,7 @@ namespace _2021_11_04_dama_GE_PB
                 if (jatekter[ii + irany_ii, jj + irany_jj].Controls.Count == 0)
                 {
                     jatekter[ii + irany_ii, jj + irany_jj].BackColor = Color.Yellow;
+                    
                 }
                 else if (jatekter[ii + irany_ii, jj + irany_jj].Controls.Count != 0 && jatekter[ii + irany_ii, jj + irany_jj].Enabled == false && !jatekter[ii + irany_ii, jj + irany_jj].Controls[0].Name.Contains(selected.Name.Split('_')[0]))
                 {
