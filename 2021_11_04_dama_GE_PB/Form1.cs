@@ -30,7 +30,6 @@ namespace _2021_11_04_dama_GE_PB
             atadas();
 
             //telje sképernyő
-            //this.TopMost = true;
             this.FormBorderStyle = FormBorderStyle.None;
 
             int szeles = Screen.PrimaryScreen.WorkingArea.Width;
@@ -121,8 +120,6 @@ namespace _2021_11_04_dama_GE_PB
                 else
                 {
                     this.WindowState = FormWindowState.Maximized;
-                    //headerPANEL.Location = new Point(0, 0);
-                    //headerPANEL.Size = new Size(this.Width, 30);
                     global.header.BackColor = Color.FromArgb(global.szin2[0], global.szin2[1], global.szin2[2]);
                 }
             }

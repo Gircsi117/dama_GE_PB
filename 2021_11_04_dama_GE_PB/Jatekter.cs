@@ -382,7 +382,6 @@ namespace _2021_11_04_dama_GE_PB
                     {
                         if (uthetnek.Contains(jatekter[i, j]))
                         {
-                            //MessageBox.Show($"{i} - {j}");
                             jatekter[i, j].BackColor = Color.Green;
                             jatekter[i, j].Enabled = true;
                         }
