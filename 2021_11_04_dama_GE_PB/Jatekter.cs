@@ -346,7 +346,7 @@ namespace _2021_11_04_dama_GE_PB
                             lepeskenyszer(i, j, 1, -1);
                             lepeskenyszer(i, j, 1, 1);
                         }
-                        else if (selected.Name == "feher_dama" && fel == "feher")
+                        else if (jatekter[i, j].Controls[0].Name == "feher_dama" && fel == "feher")
                         {
                             lepeskenyszer(i, j, 1, -1, true);
                             lepeskenyszer(i, j, 1, 1, true);
@@ -358,7 +358,7 @@ namespace _2021_11_04_dama_GE_PB
                             lepeskenyszer(i, j, -1, -1);
                             lepeskenyszer(i, j, -1, 1);
                         }
-                        else if (selected.Name == "fekete_dama" && fel == "fekete")
+                        else if (jatekter[i, j].Controls[0].Name == "fekete_dama" && fel == "fekete")
                         {
                             lepeskenyszer(i, j, 1, -1, true);
                             lepeskenyszer(i, j, 1, 1, true);
@@ -412,16 +412,15 @@ namespace _2021_11_04_dama_GE_PB
                         if (jatekter[ii + irany_ii * 2, jj + irany_jj * 2].Controls.Count == 0)
                         {
                             lephetnek.Add(jatekter[ii, jj].Controls[0] as PictureBox);
-                            uthetnek.Add(jatekter[ii, jj]);
+                            if (!jatekter[ii, jj].Controls[0].Name.Contains("dama"))
+                            {
+                                uthetnek.Add(jatekter[ii, jj]);
+                            }
+                            
                             mehet = false;
                         }
 
                     }
-                }
-
-                if (damae && (jatekter[ii, jj].BackColor == Color.Yellow || jatekter[ii, jj].Enabled == true) && jatekter[ii + irany_ii, jj + irany_jj].Controls.Count == 0 && mehet)
-                {
-                    lepeskenyszer((ii + irany_ii), (jj + irany_jj), irany_ii, irany_jj, true);
                 }
             }
         }
